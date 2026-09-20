@@ -13,8 +13,7 @@ python3 -m http.server 8644 -d "/Users/macbookprotria2/Branding Pedro/desafio-am
 Depois abra http://localhost:8644
 
 ## O que falta você preencher (está marcado com comentário no HTML)
-1. **Link do checkout** — hoje todos os botões levam pra seção de oferta (`#oferta`), e o botão
-   dentro do card de preço está com `href="#"`. Troque pelos links da plataforma de pagamento.
+1. ~~Link do checkout~~ — feito: os 7 botões apontam pra https://pay.hotmart.com/L107650558N
 2. **Preço** — os valores `De R$ 197,00 / 12x de R$ 9,70 / R$ 97,00 à vista` são placeholders.
 3. **Respostas do FAQ** — escrevi um rascunho pra cada pergunta. Revise, principalmente a de
    tempo de acesso (não sei o prazo real).

@@ -156,7 +156,7 @@
    Cole o Project ID (10 caracteres, em clarity.microsoft.com → Settings → Setup).
    Enquanto estiver vazio, nada é carregado. */
 (function () {
-  var CLARITY_ID = '';
+  var CLARITY_ID = 'ymb467hfz5';
   if (!CLARITY_ID) return;
 
   (function (c, l, a, r, i, t, y) {

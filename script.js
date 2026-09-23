@@ -38,6 +38,7 @@
   if (!modal || !form) return;
 
   var campoNome = document.getElementById('lead-nome');
+  var campoEmail = document.getElementById('lead-email');
   var campoTel = document.getElementById('lead-telefone');
   var isca = document.getElementById('lead-isca');
   var erro = document.getElementById('lead-erro');
@@ -73,6 +74,10 @@
     if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
     return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
   }
+  campoEmail.addEventListener('input', function () {
+    campoEmail.setAttribute('aria-invalid', 'false');
+    erro.hidden = true;
+  });
   campoTel.addEventListener('input', function () {
     campoTel.value = mascara(campoTel.value);
     campoTel.setAttribute('aria-invalid', 'false');
@@ -114,6 +119,14 @@
       campoNome.focus();
       return;
     }
+    var email = campoEmail.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      erro.textContent = 'Confere o e-mail: é por ele que o acesso também chega.';
+      erro.hidden = false;
+      campoEmail.setAttribute('aria-invalid', 'true');
+      campoEmail.focus();
+      return;
+    }
     if (!telefoneValido(campoTel.value)) {
       erro.textContent = 'Confere o número: precisa ter DDD e o número completo.';
       erro.hidden = false;
@@ -129,6 +142,7 @@
     var dados = {
       tipo: 'lead',
       nome: nome,
+      email: email,
       telefone: campoTel.value.replace(/\D/g, ''),
       origem: location.pathname + location.search,
       referrer: document.referrer || '',

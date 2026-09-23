@@ -31,7 +31,7 @@
 (function () {
   // COLE AQUI A URL DE PRODUÇÃO DO WEBHOOK DO n8n.
   // Enquanto estiver vazia, o popup coleta e segue pro checkout sem gravar.
-  var WEBHOOK = '';
+  var WEBHOOK = 'https://script.google.com/macros/s/AKfycbyLtE9ZqB4wr9gRsJQCRYRSgXUxaVM-vXKFCmRf5qoz-F5HlSVcoV1HS7cDZnTSQWsC/exec?k=amfh2026';
 
   var modal = document.getElementById('modal-lead');
   var form = document.getElementById('form-lead');

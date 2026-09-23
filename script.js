@@ -127,6 +127,7 @@
     botao.textContent = 'Só um segundo...';
 
     var dados = {
+      tipo: 'lead',
       nome: nome,
       telefone: campoTel.value.replace(/\D/g, ''),
       origem: location.pathname + location.search,
@@ -142,9 +143,10 @@
     if (!WEBHOOK) { seguir(); return; }
 
     // keepalive garante o envio mesmo com a navegação acontecendo em seguida
+    // text/plain evita o preflight de CORS — o Apps Script não responde a OPTIONS
     fetch(WEBHOOK, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify(dados),
       keepalive: true
     }).then(seguir).catch(seguir); // falhou o registro? a venda não pode ser perdida

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,190 +12,219 @@
 <link rel="icon" href="assets/logo-amfh.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=11">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20">
+<script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
 <body>
 
-<!-- ============================ HEADER ============================ -->
-<header class="header">
-  <div class="header__inner">
-    <a class="header__logo" href="#topo">
-      <img src="assets/logo-amfh.jpg" alt="Logo AMFH — O Abdômen Mais Forte da História">
-      <span>Desafio AMFH - 21 dias pra você ter abdômen mais forte da história</span>
-    </a>
-  </div>
+<div class="progress"><span></span></div>
+
+<header class="chrome">
+  <a class="brand" href="#topo">
+    <img src="assets/logo-amfh.jpg" alt="Logo AMFH">
+    <span>Desafio AMFH · 21 dias pra você ter abdômen mais forte da história</span>
+  </a>
 </header>
 
-<!-- ============================ HERO ============================ -->
-<section class="hero" id="topo">
-  <div class="container">
-    <div class="hero__grid">
-      <div>
-        <h1>Conquiste um <span class="grad-text">abdômen forte</span> com treinos diários e rápidos pra você fazer em casa.</h1>
-        <p class="hero__sub"><strong>21 dias. 21 treinos rápidos.</strong> Você vai sair do desafio com o abdômen bem mais forte do que entrou.</p>
-      </div>
-      <div class="hero__media">
-        <div class="hero__ring"></div>
-        <img src="assets/hero-carninha.webp" alt="João Gabriel dos Anjos, o Carninha, comemorando sem camisa com o abdômen definido">
-        <div class="hero__tag"><b>21</b><span>dias de desafio</span></div>
-      </div>
-    </div>
+<main>
+
+<!-- ============================ CAPA ============================ -->
+<section class="cover" id="topo">
+  <div class="cover__media"><img src="assets/hero-carninha.webp" alt="Carninha comemorando sem camisa, com o abdômen definido"></div>
+  <div class="cover__shade"></div>
+  <div class="container cover__in">
+    <h1 class="display cover__title" data-reveal>Conquiste um <em>abdômen forte</em> com treinos diários e rápidos pra você fazer em casa.</h1>
+    <p class="cover__lead" data-reveal style="--d:120ms"><b>21 dias. 21 treinos rápidos.</b> Você vai sair do desafio com o abdômen bem mais forte do que entrou.</p>
   </div>
+  <span class="cover__scroll">Role
+    <svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+  </span>
 </section>
 
 <!-- ============================ NÚMEROS ============================ -->
 <section class="stats">
   <div class="container">
     <div class="stats__grid">
-      <div><b class="grad-text">21</b><span>dias</span></div>
-      <div><b class="grad-text">21</b><span>treinos</span></div>
-      <div><b class="grad-text">100%</b><span>em casa</span></div>
-      <div><b class="grad-text">7</b><span>dias de garantia</span></div>
+      <div class="stats__cell" data-reveal><span class="stats__num">21</span><span class="stats__lbl">dias</span></div>
+      <div class="stats__cell" data-reveal style="--d:90ms"><span class="stats__num">21</span><span class="stats__lbl">treinos</span></div>
+      <div class="stats__cell" data-reveal style="--d:180ms"><span class="stats__num">100%</span><span class="stats__lbl">em casa</span></div>
+      <div class="stats__cell" data-reveal style="--d:270ms"><span class="stats__num">7</span><span class="stats__lbl">dias de garantia</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============================ DOR ============================ -->
-<section class="section">
+<!-- ============================ POR DENTRO: OS 21 TREINOS ============================ -->
+<section class="section" id="por-dentro">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="head head--center" data-reveal>
+      <span class="eyebrow">Por dentro do desafio</span>
+      <h2 class="h2">A sequência dos <em>21 treinos</em></h2>
+      <p class="lead">Um treino por dia, na ordem. Você não precisa escolher nada: abre a plataforma, aperta o play e faz.</p>
+    </div>
+
+    <div class="dias" data-reveal>
+      <div class="dias__lbl">Sua jornada — dia a dia</div>
+      <div class="dias__grid" id="dias-grid"></div>
+      <p class="dias__legenda">Os dias em destaque marcam o começo de cada semana e a reta final.</p>
+    </div>
+
+    <div class="amostras">
+      <!-- PLACEHOLDER 1 — troque por um print da aula do Dia 1 -->
+      <figure class="frame frame--vazio" data-reveal>
+        <div class="frame__hint">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M10 8l4 2.5-4 2.5z"/></svg>
+          <b>Aula do Dia 1</b>
+          <small>Coloque aqui um print ou foto da primeira aula, como ela aparece pro aluno.</small>
+        </div>
+        <span class="frame__tag">Dia 1</span>
+      </figure>
+
+      <!-- PLACEHOLDER 2 — troque por um print da área de membros -->
+      <figure class="frame frame--vazio" data-reveal style="--d:90ms">
+        <div class="frame__hint">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg>
+          <b>Dentro da plataforma</b>
+          <small>Print da área de aulas, mostrando os treinos organizados por dia.</small>
+        </div>
+        <span class="frame__tag">Plataforma</span>
+      </figure>
+
+      <!-- PLACEHOLDER 3 — troque por uma foto do treino sendo executado -->
+      <figure class="frame frame--vazio frame--larga" data-reveal style="--d:180ms">
+        <div class="frame__hint">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M6.5 6.5h11M4 9.5h16M6.5 12.5h11"/><circle cx="12" cy="17" r="3"/></svg>
+          <b>Treino em execução</b>
+          <small>Foto ou frame de vídeo de um treino sendo feito em casa — o formato real das aulas.</small>
+        </div>
+        <span class="frame__tag">Como é o treino</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ A VERDADE ============================ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="head head--center" data-reveal>
       <span class="eyebrow">A verdade é que:</span>
-      <h2>Não é falta de vontade.<br><span class="grad-text">É falta de um plano curto e diário.</span></h2>
-      <p>Todo final de ano você fala que vai meter o shape. Começa animado, faz 100 abdominais no primeiro dia, sente dor por três dias e desiste.</p>
-      <p style="margin-top:14px"><strong>O problema nunca foi o seu corpo.</strong></p>
+      <h2 class="h2">Não é falta de vontade.<br><em>É falta de um plano curto e diário.</em></h2>
+      <p class="lead">Todo final de ano você fala que vai meter o shape. Começa animado, faz 100 abdominais no primeiro dia, sente dor por três dias e desiste.</p>
+      <p class="lead" style="color:#fff;font-weight:600">O problema nunca foi o seu corpo.</p>
     </div>
-    <div class="pain reveal">
-      <div class="pain__card">
-        <h3>Você não sabe o que fazer.</h3>
+
+    <div class="pcards">
+      <article class="pcard" data-reveal>
+        <div class="pcard__ico"><svg class="ico" viewBox="0 0 24 24"><path d="M12 17v.01M12 14a2.5 2.5 0 1 0-2.5-2.5"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3 class="h3">Você não sabe o que fazer.</h3>
         <p>Um treino aleatório do YouTube hoje, outro completamente diferente amanhã. Sem sequência, o abdômen não tem por que mudar.</p>
-      </div>
-      <div class="pain__card">
-        <h3>Você acha que precisa de academia</h3>
+      </article>
+      <article class="pcard" data-reveal style="--d:90ms">
+        <div class="pcard__ico"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12h2M19 12h2M6 8v8M18 8v8M9 6v12M15 6v12"/></svg></div>
+        <h3 class="h3">Você acha que precisa de academia</h3>
         <p>Não precisa. Precisa de pouco espaço, poucos minutos e alguém dizendo exatamente o que fazer em cada um dos 21 dias.</p>
-      </div>
-      <div class="pain__card">
-        <h3>Você desiste na segunda semana.</h3>
+      </article>
+      <article class="pcard" data-reveal style="--d:180ms">
+        <div class="pcard__ico"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3 class="h3">Você desiste na segunda semana.</h3>
         <p>Treinar sozinho é fácil de largar. Treinar junto com uma galera que está no mesmo dia que você é o que faz você terminar.</p>
-      </div>
+      </article>
     </div>
-    <p class="pain-close reveal">Mas em <strong>21 dias</strong>, <span class="grad-text">tudo muda.</span></p>
+
+    <p class="fecho" data-reveal>Mas em 21 dias, <em>tudo muda.</em></p>
   </div>
 </section>
 
-<!-- ============================ COMO FUNCIONA ============================ -->
-<section class="section section--alt" id="como-funciona">
+<!-- ============================ COMO VAI FUNCIONAR ============================ -->
+<section class="section" id="como-funciona">
   <div class="container">
-    <div class="section-head section-head--label reveal">
-      <span class="eyebrow eyebrow--lg">Como vai funcionar o desafio?</span>
-      <p>Durante 21 dias, eu vou te entregar 1 treino rápido por dia, com foco total no seu abdômen. Vão ser treinos 100% práticos, rápidos e eficazes.</p>
+    <div class="head head--center" data-reveal>
+      <span class="eyebrow">Como vai funcionar o desafio?</span>
+      <p class="lead">Durante 21 dias, eu vou te entregar 1 treino rápido por dia, com foco total no seu abdômen. Vão ser treinos 100% práticos, rápidos e eficazes.</p>
     </div>
 
-    <div class="steps reveal">
-      <article class="step">
-        <div class="step__num">01</div>
-        <h3>Você entra e já começa</h3>
+    <div class="pcards">
+      <article class="pcard" data-reveal>
+        <div class="pcard__num">01</div>
+        <h3 class="h3">Você entra e já começa</h3>
         <p>Acesso imediato à plataforma e ao grupo. Nada de esperar turma abrir: o Dia 1 está te esperando assim que você entrar.</p>
       </article>
-      <article class="step">
-        <div class="step__num">02</div>
-        <h3>1 treino por dia, direto ao ponto</h3>
+      <article class="pcard" data-reveal style="--d:90ms">
+        <div class="pcard__num">02</div>
+        <h3 class="h3">1 treino por dia, direto ao ponto</h3>
         <p>Todo dia um treino rápido de abdômen, na ordem certa, pra fazer em casa sem equipamento nenhum. É só apertar o play e seguir.</p>
       </article>
-      <article class="step">
-        <div class="step__num">03</div>
-        <h3>Você fecha os 21 dias</h3>
+      <article class="pcard" data-reveal style="--d:180ms">
+        <div class="pcard__num">03</div>
+        <h3 class="h3">Você fecha os 21 dias</h3>
         <p>Com o grupo te cobrando, o suporte te respondendo e a sequência aparecendo no espelho. No dia 21 você não é mais a mesma pessoa.</p>
       </article>
     </div>
-
   </div>
 </section>
 
-<!-- ============================ O QUE VOCÊ RECEBE ============================ -->
-<section class="section">
+<!-- ============================ ALÉM DOS TREINOS ============================ -->
+<section class="section section--alt">
   <div class="container">
-    <div class="section-head section-head--label reveal">
-      <span class="eyebrow eyebrow--lg">Além dos treinos, você recebe:</span>
+    <div class="head head--center" data-reveal>
+      <span class="eyebrow">Além dos treinos, você recebe:</span>
     </div>
-    <div class="cards reveal">
-      <article class="card">
-        <div class="card__icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M10 8l4 2.5-4 2.5z"/></svg>
-        </div>
-        <h3>Plataforma exclusiva</h3>
+    <div class="pcards">
+      <article class="pcard" data-reveal>
+        <div class="pcard__ico"><svg class="ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M10 8l4 2.5-4 2.5z"/></svg></div>
+        <h3 class="h3">Plataforma exclusiva</h3>
         <p>É aqui que você vai conseguir ter acesso a todas as aulas, módulos e trilhas de treinos para deixar o seu abdômen forte.</p>
       </article>
-      <article class="card">
-        <div class="card__icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.6-4.9A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
-        </div>
-        <h3>Grupo exclusivo no WhatsApp</h3>
+      <article class="pcard" data-reveal style="--d:90ms">
+        <div class="pcard__ico"><svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.6-4.9A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></div>
+        <h3 class="h3">Grupo exclusivo no WhatsApp</h3>
         <p>Uma comunidade no WhatsApp pra você receber avisos de forma exclusiva, se motivar mandando fotos e treinar junto com a galera.</p>
       </article>
-      <article class="card">
-        <div class="card__icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0-10-10v4a3 3 0 0 0 3 3h1v-6H5"/><path d="M19 13h-1v6h1a3 3 0 0 0 3-3"/></svg>
-        </div>
-        <h3>Suporte rápido</h3>
+      <article class="pcard" data-reveal style="--d:180ms">
+        <div class="pcard__ico"><svg class="ico" viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 0-10-10v4a3 3 0 0 0 3 3h1v-6H5"/><path d="M19 13h-1v6h1a3 3 0 0 0 3-3"/></svg></div>
+        <h3 class="h3">Suporte rápido</h3>
         <p>Caso tenha dúvidas, é só mandar mensagem no nosso suporte que ele vai te ajudar da melhor forma possível.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============================ RESULTADOS ============================ -->
-<section class="section section--alt">
-  <div class="container">
-    <div class="results">
-      <div class="reveal">
-        <ul class="results__list">
-          <li>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Se sentir mais confiante quando olhar no espelho.
-          </li>
-          <li>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Calar a boca dos seus amigos que te chamavam de baleia.
-          </li>
-          <li>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Tirar fotos sem camisa.
-          </li>
-          <li>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            Ir pra praia nesse final de ano sem sentir vergonha da sua barriga.
-          </li>
-        </ul>
-      </div>
-    </div>
+<!-- ============================ NO FINAL DO DESAFIO ============================ -->
+<section class="section">
+  <div class="container" style="max-width:860px">
+    <ul class="checks">
+      <li data-reveal><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Se sentir mais confiante quando olhar no espelho.</li>
+      <li data-reveal style="--d:80ms"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Calar a boca dos seus amigos que te chamavam de baleia.</li>
+      <li data-reveal style="--d:160ms"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Tirar fotos sem camisa.</li>
+      <li data-reveal style="--d:240ms"><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Ir pra praia nesse final de ano sem sentir vergonha da sua barriga.</li>
+    </ul>
   </div>
 </section>
 
 <!-- ============================ PARA QUEM É ============================ -->
-<section class="section">
+<section class="section section--alt">
   <div class="container">
-    <div class="section-head section-head--label reveal">
-      <span class="eyebrow eyebrow--lg">Para quem é</span>
+    <div class="head head--center" data-reveal>
+      <span class="eyebrow">Para quem é</span>
     </div>
-    <div class="fit reveal">
-      <div class="fit__col fit__col--yes">
-        <h3>Esse desafio é pra você se…</h3>
+    <div class="fit">
+      <div class="fit__col fit__col--sim" data-reveal>
+        <h3 class="h3">Esse desafio é pra você se…</h3>
         <ul>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Você quer um abdômen mais forte e mais estético, mas não tem tempo pra treino longo.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Você quer treinar em casa, sem academia e sem equipamento.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Você já tentou começar sozinho várias vezes e sempre parou no meio.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Você quer chegar no final do ano sem vergonha de tirar a camisa.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Você está disposto a seguir o protocolo por 21 dias seguidos.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Você quer um abdômen mais forte e mais estético, mas não tem tempo pra treino longo.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Você quer treinar em casa, sem academia e sem equipamento.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Você já tentou começar sozinho várias vezes e sempre parou no meio.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Você quer chegar no final do ano sem vergonha de tirar a camisa.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Você está disposto a seguir o protocolo por 21 dias seguidos.</li>
         </ul>
       </div>
-      <div class="fit__col fit__col--no">
-        <h3>Não é pra você se…</h3>
+      <div class="fit__col fit__col--nao" data-reveal style="--d:110ms">
+        <h3 class="h3">Não é pra você se…</h3>
         <ul>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Você quer resultado sem fazer o treino do dia.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Você procura pílula mágica, chá ou atalho.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Você acha que 21 dias é muito tempo pra mudar alguma coisa.</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Você tem alguma restrição médica e não pretende falar com o seu médico antes.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg> Você quer resultado sem fazer o treino do dia.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg> Você procura pílula mágica, chá ou atalho.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg> Você acha que 21 dias é muito tempo pra mudar alguma coisa.</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg> Você tem alguma restrição médica e não pretende falar com o seu médico antes.</li>
         </ul>
       </div>
     </div>
@@ -203,69 +232,109 @@
 </section>
 
 <!-- ============================ PROFESSOR ============================ -->
-<section class="section section--alt" id="professor">
+<section class="section" id="professor">
   <div class="container">
-    <div class="teacher">
-      <div class="teacher__media reveal">
-        <img src="assets/carninha-professor.jpg" alt="João Gabriel dos Anjos, o Carninha, de camiseta Team Carninha">
-        <div class="teacher__badge"><b>+20M</b><span>alcançados/mês</span></div>
-      </div>
-      <div class="reveal">
+    <div class="prof">
+      <figure class="frame" data-reveal style="position:relative">
+        <img src="assets/carninha-professor.jpg" alt="João Gabriel dos Anjos, o Carninha" style="--pos:50% 22%">
+        <div class="prof__badge"><b>+20M</b><span>alcançados/mês</span></div>
+      </figure>
+      <div class="prof__txt" data-reveal style="--d:110ms">
         <span class="eyebrow">Conheça o seu professor</span>
-        <h2>Quem é o <span class="grad-text">Carninha?</span></h2>
-        <p class="lead-first" style="margin-top:22px"><strong>João Gabriel dos Anjos</strong> é atleta, empresário e influenciador. Desde criança, era gordinho e não tinha o corpo legal, mas sempre teve o sonho de colocar o shape que fizesse dele uma pessoa mais confiante.</p>
-        <p>Hoje, conhecido como <strong>Carninha</strong> e com o seu estilo de vida, João ajuda seus alunos por todo o Brasil a alcançarem a alta performance e conquistar o abdômen mais forte de suas vidas.</p>
-        <p>Com <strong>mais de 20 milhões de pessoas alcançadas todos os meses</strong> nas redes sociais, o Desafio Abdômen Mais Forte da História te espera.</p>
-        <p><strong>Ambiente certo e com a metodologia certa irão mudar o seu estilo de vida pra sempre.</strong></p>
+        <h2 class="h2">Quem é o <em>Carninha?</em></h2>
+        <p><b>João Gabriel dos Anjos</b> é atleta, empresário e influenciador. Desde criança, era gordinho e não tinha o corpo legal, mas sempre teve o sonho de colocar o shape que fizesse dele uma pessoa mais confiante.</p>
+        <p>Hoje, conhecido como <b>Carninha</b> e com o seu estilo de vida, João ajuda seus alunos por todo o Brasil a alcançarem a alta performance e conquistar o abdômen mais forte de suas vidas.</p>
+        <p>Com <b>mais de 20 milhões de pessoas alcançadas todos os meses</b> nas redes sociais, o Desafio Abdômen Mais Forte da História te espera.</p>
+        <p><b>Ambiente certo e com a metodologia certa irão mudar o seu estilo de vida pra sempre.</b></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================ OFERTA ============================ -->
-<section class="section offer" id="oferta">
+<section class="section section--alt" id="oferta">
   <div class="container">
-    <div class="section-head reveal">
-      <h2>Entre agora para o <span class="grad-text">Desafio AMFH</span></h2>
-      <p>Tudo o que você precisa pra fechar os 21 dias — por menos do que você gasta numa pizza no fim de semana.</p>
+    <div class="head head--center" data-reveal>
+      <h2 class="h2">Entre agora para o <em>Desafio AMFH</em></h2>
+      <p class="lead">Escolha como você quer fazer os 21 dias. Nos dois, o desafio é o mesmo — muda o que você leva junto pra não parar no meio.</p>
     </div>
 
-    <div class="offer__card reveal">
-      <span class="offer__tag">Acesso imediato</span>
-      <ul class="offer__list">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 21 treinos rápidos de abdômen, 1 por dia, pra fazer em casa</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Plataforma exclusiva com todas as aulas, módulos e trilhas</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Grupo exclusivo no WhatsApp pra treinar junto com a galera</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Suporte rápido pra tirar qualquer dúvida</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Garantia incondicional de 7 dias</li>
-      </ul>
+    <div class="duo">
+      <!-- PLANO 1 -->
+      <article class="duo__card" data-reveal>
+        <span class="duo__tag">O desafio</span>
+        <h3 class="duo__nome">Desafio AMFH</h3>
+        <p class="duo__desc">Os 21 treinos, a plataforma e o grupo. Tudo o que você precisa pra fechar o desafio.</p>
 
-      <!-- ===== PREÇO: TROQUE OS VALORES PELOS SEUS ===== -->
-      <div class="price">
-        <div class="price__from">De R$ 197,00</div>
-        <div class="price__main"><span>por</span><b class="grad-text">R$&nbsp;29<i>,90</i></b></div>
-        <div class="price__cash">pagamento único · acesso imediato</div>
-      </div>
+        <div class="preco">
+          <div class="preco__de">De R$ 197,00</div>
+          <div class="preco__main"><b>R$&nbsp;29<i>,90</i></b></div>
+          <div class="preco__nota">pagamento único</div>
+        </div>
 
-      <a class="btn btn--block" href="https://pay.hotmart.com/L107650558N" style="margin-top:26px">
-        Quero entrar pro desafio
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </a>
-      <span class="btn-note">Pagamento 100% seguro · Acesso liberado na hora</span>
+        <ul class="checks">
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> 21 treinos rápidos de abdômen, 1 por dia</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Plataforma exclusiva com as aulas e trilhas</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Grupo exclusivo no WhatsApp</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Suporte pra tirar dúvidas</li>
+        </ul>
+
+        <a class="btn btn--ghost btn--block" href="https://pay.hotmart.com/L107650558N">
+          <span class="btn__txt">Quero entrar pro desafio</span>
+          <span class="btn__ico"><svg class="ico" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <ul class="entrega">
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg> Acesso liberado na hora, assim que o pagamento é aprovado</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg> 100% digital, direto no seu celular</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Garantia incondicional de 7 dias</li>
+        </ul>
+      </article>
+
+      <!-- PLANO 2 — COMPLETO -->
+      <article class="duo__card duo__card--hot" data-reveal style="--d:110ms">
+        <span class="duo__tag">Mais escolhido</span>
+        <h3 class="duo__nome">Plano Completo</h3>
+        <p class="duo__desc">O desafio inteiro, mais dois materiais pra você seguir a sequência e voltar rápido se furar um dia.</p>
+
+        <div class="preco">
+          <div class="preco__de">De R$ 247,00</div>
+          <div class="preco__main"><b>R$&nbsp;39<i>,90</i></b></div>
+          <div class="preco__nota">pagamento único · R$ 10 a mais que o plano do desafio</div>
+        </div>
+
+        <ul class="checks">
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Tudo o que está no Desafio AMFH</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> <b>Checklist dos 21 dias</b> — pra marcar cada treino e enxergar a sequência crescendo</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> <b>Guia de recomeço</b> — o que fazer quando você furar um dia, pra não abandonar o desafio</li>
+        </ul>
+
+        <!-- TROQUE PELO LINK DO CHECKOUT DA OFERTA DE R$ 39,90 NA HOTMART -->
+        <a class="btn btn--light btn--block" href="#">
+          <span class="btn__txt">Quero o plano completo</span>
+          <span class="btn__ico"><svg class="ico" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </a>
+
+        <ul class="entrega">
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg> Acesso liberado na hora, assim que o pagamento é aprovado</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg> Treinos em vídeo + materiais em PDF, tudo digital</li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Garantia incondicional de 7 dias</li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ============================ GARANTIA ============================ -->
-<section class="section section--tight">
+<section class="section">
   <div class="container">
-    <div class="guarantee reveal">
-      <div class="seal"><div><b>7</b><span>dias de garantia</span></div></div>
+    <div class="garantia" data-reveal>
+      <div class="selo"><div><b>7</b><span>dias de garantia</span></div></div>
       <div>
-        <h2>Garantia de <span class="grad-text">7 dias</span></h2>
-        <p>Você pode entrar, começar o desafio e, por acaso, perceber que não é pra você. Basta apertar um botão que eu devolvo <strong>100% do seu investimento</strong>.</p>
+        <h2 class="h2">Garantia de <em>7 dias</em></h2>
+        <p>Você pode entrar, começar o desafio e, por acaso, perceber que não é pra você. Basta apertar um botão que eu devolvo <b>100% do seu investimento</b>.</p>
         <p>Essa é a confiança que eu tenho no método que tenho pra você.</p>
-        <p><strong>Eu confio tanto nesse desafio que, se você seguir o protocolo, é impossível não ter resultado depois do desafio.</strong></p>
+        <p><b>Eu confio tanto nesse desafio que, se você seguir o protocolo, é impossível não ter resultado depois do desafio.</b></p>
       </div>
     </div>
   </div>
@@ -274,12 +343,11 @@
 <!-- ============================ FAQ ============================ -->
 <section class="section section--alt" id="faq">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="head head--center" data-reveal>
       <span class="eyebrow">Perguntas frequentes</span>
-      <h2>Ainda tem <span class="grad-text">dúvida?</span></h2>
+      <h2 class="h2">Ainda tem <em>dúvida?</em></h2>
     </div>
-    <!-- RESPOSTAS EM RASCUNHO: revise cada uma antes de publicar -->
-    <div class="faq reveal">
+    <div class="faq" data-reveal>
       <details open>
         <summary>Quem pode fazer o Desafio Abdômen Mais Forte da História?</summary>
         <p class="faq__body">Qualquer pessoa que queira um abdômen mais forte e esteja disposta a fazer 1 treino rápido por dia durante 21 dias. Os treinos são feitos em casa, sem equipamento, e têm variações pra quem está começando agora e pra quem já treina. Se você tem alguma condição de saúde ou lesão, fale com o seu médico antes de começar.</p>
@@ -304,21 +372,22 @@
   </div>
 </section>
 
-<!-- ============================ CTA FINAL ============================ -->
+<!-- ============================ FECHO ============================ -->
 <section class="section final">
   <div class="container">
-    <div class="final__inner reveal">
-      <img src="assets/logo-amfh.jpg" alt="" style="width:92px;border-radius:50%;margin:0 auto 26px">
-      <h2>Daqui 21 dias você vai estar <span class="grad-text">com o abdômen mais forte da sua história</span> ou exatamente onde está hoje.</h2>
+    <div class="final__in" data-reveal>
+      <img src="assets/logo-amfh.jpg" alt="">
+      <h2 class="h2">Daqui 21 dias você vai estar <em>com o abdômen mais forte da sua história</em> ou exatamente onde está hoje.</h2>
       <p>A diferença entre as duas pessoas está a 1 clique.</p>
       <span class="btn-note">Garantia incondicional de 7 dias · Acesso imediato</span>
     </div>
   </div>
 </section>
 
-<!-- ============================ FOOTER ============================ -->
+</main>
+
 <footer class="footer">
-  <div class="container footer__inner">
+  <div class="container footer__in">
     <img src="assets/logo-amfh.jpg" alt="AMFH">
     <p class="footer__legal">
       Desafio Abdômen Mais Forte da História · João Gabriel dos Anjos (Carninha).<br>
@@ -335,13 +404,13 @@
   <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
     <button class="modal__x" type="button" data-fechar aria-label="Fechar">&times;</button>
     <span class="eyebrow">Última etapa</span>
-    <h3 id="modal-titulo">Isso vai levar 30 segundos...</h3>
+    <h3 class="h2" id="modal-titulo" style="font-size:clamp(24px,3.4vw,34px)">Isso vai levar 30 segundos...</h3>
     <p class="modal__texto">Assim que você pegar o seu acesso, você receberá o acesso na plataforma e o link do grupo no seu WhatsApp.</p>
 
     <form class="modal__form" id="form-lead" novalidate>
       <label class="campo">
         <span>Seu nome</span>
-        <input type="text" name="nome" id="lead-nome" data-clarity-mask="true" autocomplete="given-name" placeholder="Como quer ser chamado" required>
+        <input type="text" name="nome" id="lead-nome" autocomplete="given-name" placeholder="Como quer ser chamado" data-clarity-mask="true" required>
       </label>
       <label class="campo">
         <span>Seu melhor e-mail</span>
@@ -349,20 +418,19 @@
       </label>
       <label class="campo">
         <span>Seu WhatsApp</span>
-        <input type="tel" name="telefone" id="lead-telefone" data-clarity-mask="true" inputmode="numeric" autocomplete="tel" placeholder="(61) 99999-9999" required>
+        <input type="tel" name="telefone" id="lead-telefone" inputmode="numeric" autocomplete="tel" placeholder="(61) 99999-9999" data-clarity-mask="true" required>
       </label>
-      <!-- campo-isca: humano não preenche, robô preenche -->
       <input type="text" name="empresa" id="lead-isca" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="campo__erro" id="lead-erro" hidden></p>
 
-      <button class="btn btn--block" type="submit" id="lead-enviar">
-        Quero entrar pro desafio
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      <button class="btn btn--pink btn--block" type="submit" id="lead-enviar">
+        <span class="btn__txt">Quero entrar pro desafio</span>
+        <span class="btn__ico"><svg class="ico" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
       </button>
     </form>
   </div>
 </div>
 
-<script src="script.js?v=15"></script>
+<script src="script.js?v=20"></script>
 </body>
 </html>

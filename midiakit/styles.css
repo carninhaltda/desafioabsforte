@@ -179,7 +179,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
    03 · FAIXA DE NÚMEROS
    ========================================================================== */
 .stats{padding:clamp(44px,5vw,64px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(255,51,102,.07),rgba(47,85,180,.07))}
-.stats__grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stats__grid{display:grid;grid-template-columns:repeat(3,1fr)}
 .stats__cell{display:grid;gap:8px;padding:6px clamp(16px,2.4vw,34px)}
 .stats__cell+.stats__cell{border-left:1px solid var(--line-2)}
 .stats__cell:first-child{padding-left:0}

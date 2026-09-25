@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel dos 21 dias — Desafio AMFH</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07070a">
+<link rel="icon" href="../assets/logo-amfh.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="painel.css?v=1">
+<script>document.documentElement.className='js';</script>
+</head>
+<body>
+
+<header class="topo">
+  <img src="../assets/logo-amfh.jpg" alt="AMFH">
+  <div>
+    <h1>Painel dos 21 dias</h1>
+    <p id="resumo">Carregando…</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="barra" aria-label="Progresso">
+    <div class="barra__trilho"><i id="barra-preenche"></i></div>
+    <div class="barra__legenda">
+      <span><b id="feitos">0</b> de 21 treinos</span>
+      <span id="sequencia">Comece pelo Dia 1</span>
+    </div>
+  </section>
+
+  <!-- Aparece quando a pessoa fica sem treinar -->
+  <section class="retomada" id="retomada" hidden>
+    <span class="tag">Você furou</span>
+    <h2>A regra do desafio é uma só: <em>errou, volta pro Dia 1.</em></h2>
+    <p>Não é castigo — é o que faz a sequência valer alguma coisa. Fazer 21 dias seguidos é diferente de fazer 21 treinos espalhados no mês.</p>
+    <div class="retomada__acoes">
+      <button class="btn btn--pink" type="button" id="btn-voltar">Voltar pro Dia 1 e recomeçar</button>
+      <button class="btn btn--ghost" type="button" id="btn-continuar">Continuar de onde parei</button>
+    </div>
+  </section>
+
+  <section aria-label="Os 21 dias">
+    <div class="grade" id="grade"></div>
+  </section>
+
+  <section class="semana-info">
+    <div class="cartao">
+      <span class="cartao__tag">Semana 1 · dias 1 a 7</span>
+      <b>30 segundos ligado, 30 desligado</b>
+      <p>Três exercícios por dia. Faz 30 segundos de cada, descansa 30 entre eles.</p>
+    </div>
+    <div class="cartao">
+      <span class="cartao__tag">Semana 2 · dias 8 a 14</span>
+      <b>12 minutos direto</b>
+      <p>Os três exercícios em sequência, sem parar, até fechar os 12 minutos.</p>
+    </div>
+    <div class="cartao cartao--espera">
+      <span class="cartao__tag">Semana 3 · dias 15 a 21</span>
+      <b>Em breve</b>
+      <p>Os treinos da última semana entram aqui assim que forem gravados.</p>
+    </div>
+  </section>
+
+  <button class="zerar" type="button" id="btn-zerar">Zerar meu progresso</button>
+</main>
+
+<!-- Detalhe do dia -->
+<div class="modal" id="modal-dia" hidden>
+  <div class="modal__fundo" data-fechar></div>
+  <div class="modal__cartao" role="dialog" aria-modal="true" aria-labelledby="dia-titulo">
+    <button class="modal__x" type="button" data-fechar aria-label="Fechar">&times;</button>
+    <span class="tag" id="dia-semana">Semana 1</span>
+    <h2 id="dia-titulo">Dia 1</h2>
+    <p class="modal__regra" id="dia-regra">30 segundos ligado, 30 desligado</p>
+    <ol class="exercicios" id="dia-exercicios"></ol>
+    <button class="btn btn--pink btn--bloco" type="button" id="btn-concluir">Concluí o treino de hoje</button>
+    <button class="btn btn--ghost btn--bloco" type="button" id="btn-desmarcar" hidden>Desmarcar este dia</button>
+  </div>
+</div>
+
+<script src="painel.js?v=1"></script>
+</body>
+</html>

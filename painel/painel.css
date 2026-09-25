@@ -1,0 +1,79 @@
+/* Painel dos 21 dias — mesma identidade da página de vendas */
+:root{
+  --bg:#07070a;--bg-2:#0e0e13;--card:rgba(255,255,255,.05);--card-2:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.1);--line-2:rgba(255,255,255,.2);
+  --text:#fff;--muted:#a9a9b5;--muted-2:#8b8b98;
+  --pink:#ff3366;--pink-deep:#c41f4f;--blue:#2f55b4;
+  --grad:linear-gradient(120deg,#ff3366 0%,#df3160 38%,#7a2f7c 68%,#2f55b4 100%);
+  --f-display:'Archivo','Arial Black',sans-serif;--f-body:'Inter',system-ui,sans-serif;
+  --r:20px;--ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+h1,h2,p,ol{margin:0}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 70px}
+
+.topo{display:flex;align-items:center;gap:14px;max-width:720px;margin:0 auto;padding:26px 18px 22px}
+.topo img{width:46px;height:46px;border-radius:50%;flex:none}
+.topo h1{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(19px,4.6vw,26px);line-height:1.1}
+.topo p{color:var(--muted);font-size:13.5px}
+
+/* Barra de progresso */
+.barra{margin-bottom:26px}
+.barra__trilho{height:10px;border-radius:99px;background:var(--card);overflow:hidden;border:1px solid var(--line)}
+.barra__trilho i{display:block;height:100%;width:0;background:var(--grad);transition:width .8s var(--ease)}
+.barra__legenda{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:13px;color:var(--muted)}
+.barra__legenda b{color:#fff;font-size:15px}
+
+/* Retomada */
+.retomada{border:1px solid rgba(255,51,102,.5);background:linear-gradient(160deg,rgba(255,51,102,.16),rgba(47,85,180,.08));border-radius:var(--r);padding:24px;margin-bottom:26px}
+.retomada h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(18px,4.4vw,24px);line-height:1.12;margin:12px 0 10px}
+.retomada h2 em{font-style:normal;color:var(--pink)}
+.retomada p{color:#e2e2ea;font-size:14.5px}
+.retomada__acoes{display:grid;gap:10px;margin-top:18px}
+.tag{display:inline-block;padding:6px 12px;border-radius:99px;background:var(--pink-deep);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+/* Grade dos dias */
+.grade{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.dia{position:relative;aspect-ratio:1;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:700;font-size:15px;display:grid;place-items:center;transition:transform .4s var(--ease),border-color .3s,background .3s,color .3s}
+.dia small{position:absolute;top:5px;left:0;right:0;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2)}
+.dia--feito{background:var(--grad);border-color:transparent;color:#fff}
+.dia--feito::after{content:"✓";position:absolute;bottom:4px;font-size:11px}
+.dia--hoje{border-color:var(--pink);color:#fff;box-shadow:0 0 0 3px rgba(255,51,102,.18)}
+.dia--espera{opacity:.45}
+.dia:hover{transform:translateY(-2px)}
+
+/* Semanas */
+.semana-info{display:grid;gap:10px;margin-top:26px}
+.cartao{border:1px solid var(--line);background:var(--bg-2);border-radius:16px;padding:18px 20px}
+.cartao__tag{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.cartao b{display:block;font-size:16px;margin-bottom:4px}
+.cartao p{color:var(--muted);font-size:13.5px}
+.cartao--espera{opacity:.6}
+
+.zerar{display:block;margin:34px auto 0;background:none;border:0;color:var(--muted-2);font-size:12.5px;text-decoration:underline}
+.zerar:hover{color:var(--pink)}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:99px;border:0;font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;transition:transform .3s var(--ease),background .3s,color .3s}
+.btn--pink{background:var(--pink);color:#fff}
+.btn--ghost{background:transparent;border:1.5px solid var(--line-2);color:#fff}
+.btn--bloco{display:flex;width:100%;margin-top:10px}
+.btn:active{transform:scale(.98)}
+
+/* Modal do dia */
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:end center;padding:0}
+.modal[hidden]{display:none}
+.modal__fundo{position:absolute;inset:0;background:rgba(3,3,5,.82);backdrop-filter:blur(6px)}
+.modal__cartao{position:relative;z-index:2;width:100%;max-width:560px;background:linear-gradient(160deg,#16161d,#0b0b10);border:1px solid var(--line-2);border-radius:24px 24px 0 0;padding:28px 24px calc(28px + env(safe-area-inset-bottom));max-height:88vh;overflow-y:auto;animation:sobe .3s var(--ease)}
+@keyframes sobe{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+.modal__x{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--muted);font-size:26px;line-height:1}
+.modal__cartao h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:28px;margin:12px 0 6px}
+.modal__regra{color:var(--pink);font-size:13.5px;font-weight:600;margin-bottom:18px}
+.exercicios{display:grid;gap:10px;padding:0;list-style:none;counter-reset:ex}
+.exercicios li{counter-increment:ex;display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:var(--card);font-size:15px}
+.exercicios li::before{content:counter(ex);flex:none;width:24px;height:24px;border-radius:8px;background:var(--card-2);color:var(--pink);font-size:12px;font-weight:700;display:grid;place-items:center}
+@media (min-width:640px){.modal{place-items:center}.modal__cartao{border-radius:24px}}
+@media (prefers-reduced-motion:reduce){.modal__cartao{animation:none}.barra__trilho i{transition:none}}

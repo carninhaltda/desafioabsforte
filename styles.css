@@ -208,6 +208,26 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .checks .ico{color:var(--pink);margin-top:2px}
 .checks--limpa li{padding:0;border:0;background:none}
 
+/* ---------- Prova: antes e depois + depoimentos ---------- */
+.provas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.prova{position:relative;margin:0;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg-2);overflow:hidden;overflow:clip;min-height:340px;display:flex;flex-direction:column}
+.prova--foto{grid-row:span 2;padding:0}
+.prova--foto img{width:100%;height:100%;object-fit:cover;flex:1;border-radius:inherit}
+.prova--foto figcaption{position:absolute;inset:auto 0 0 0;z-index:2;padding:20px;display:grid;gap:3px;background:linear-gradient(0deg,rgba(7,7,10,.92),rgba(7,7,10,0))}
+.prova--foto figcaption b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:16px}
+.prova--foto figcaption span{color:var(--muted);font-size:13px}
+.prova--vazia{display:grid;place-items:center;text-align:center;padding:28px;border-style:dashed}
+.prova__hint{display:grid;gap:9px;justify-items:center;color:var(--muted)}
+.prova__hint .ico{width:26px;height:26px;color:var(--pink)}
+.prova__hint b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:14px;letter-spacing:.05em;color:#fff}
+.prova__hint small{font-size:12.5px;line-height:1.5;max-width:240px}
+.prova--depo{padding:28px;justify-content:center;gap:16px}
+.prova__aspas{font-family:var(--f-display);font-size:60px;line-height:.6;color:var(--pink)}
+.prova--depo blockquote{margin:0;font-size:16px;color:#e6e6ec;line-height:1.55}
+.prova--depo figcaption{display:grid;gap:2px}
+.prova--depo figcaption b{font-size:14px}
+.prova--depo figcaption span{color:var(--muted);font-size:12.5px}
+
 /* ---------- Para quem é / não é ---------- */
 .fit{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .fit__col{padding:clamp(26px,3vw,40px);border-radius:var(--r-lg);border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015))}
@@ -326,6 +346,8 @@ body.modal-aberto{overflow:hidden}
    RESPONSIVO
    ========================================================================== */
 @media (max-width:1000px){
+  .provas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prova--foto{grid-row:span 2}
   .pcards{grid-template-columns:1fr}
   .fit,.duo,.prof{grid-template-columns:1fr}
   .prof .frame{max-width:420px;margin-inline:auto}
@@ -335,6 +357,9 @@ body.modal-aberto{overflow:hidden}
   .garantia{grid-template-columns:1fr;justify-items:center;text-align:center}
 }
 @media (max-width:640px){
+  .provas{grid-template-columns:1fr}
+  .prova--foto{grid-row:auto;min-height:420px}
+  .prova{min-height:260px}
   .amostras{grid-template-columns:1fr}
   .amostras .frame--larga{grid-column:span 1}
   .cover__media img{object-position:52% 14%}

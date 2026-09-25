@@ -30,6 +30,24 @@
     else { img.addEventListener('load', pronto); img.addEventListener('error', pronto); }
   });
 
+  /* ---------- Vídeos: tocam quando entram em cena ---------- */
+  (function () {
+    var videos = $$('video[autoplay]');
+    if (!videos.length) return;
+    var tocar = function (v) {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { /* navegador bloqueou: fica no poster */ });
+    };
+    if (!('IntersectionObserver' in window)) { videos.forEach(tocar); return; }
+    var io = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) tocar(e.target);
+        else e.target.pause();
+      });
+    }, { threshold: 0.25 });
+    videos.forEach(function (v) { io.observe(v); });
+  })();
+
   /* ---------- Entradas ao rolar ---------- */
   (function () {
     var alvos = $$('[data-reveal]');

@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=21">
+<link rel="stylesheet" href="styles.css?v=22">
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
 <body>
@@ -70,34 +70,24 @@
     </div>
 
     <div class="amostras">
-      <!-- PLACEHOLDER 1 — troque por um print da aula do Dia 1 -->
-      <figure class="frame frame--vazio" data-reveal>
-        <div class="frame__hint">
-          <svg class="ico" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M10 8l4 2.5-4 2.5z"/></svg>
-          <b>Aula do Dia 1</b>
-          <small>Coloque aqui um print ou foto da primeira aula, como ela aparece pro aluno.</small>
-        </div>
-        <span class="frame__tag">Dia 1</span>
+      <figure class="frame frame--vintage" data-reveal>
+        <img src="assets/aula-dia1.webp" alt="Tela da aula de boas-vindas do Desafio AMFH, com João Gabriel dos Anjos" loading="lazy">
+        <span class="grao" aria-hidden="true"></span>
+        <figcaption class="frame__tag">Aula do Dia 1</figcaption>
       </figure>
 
-      <!-- PLACEHOLDER 2 — troque por um print da área de membros -->
-      <figure class="frame frame--vazio" data-reveal style="--d:90ms">
-        <div class="frame__hint">
-          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/></svg>
-          <b>Dentro da plataforma</b>
-          <small>Print da área de aulas, mostrando os treinos organizados por dia.</small>
-        </div>
-        <span class="frame__tag">Plataforma</span>
+      <figure class="frame frame--vintage" data-reveal style="--d:90ms">
+        <img src="assets/plataforma.webp" alt="Área de aulas da plataforma, com os treinos organizados em ordem" loading="lazy">
+        <span class="grao" aria-hidden="true"></span>
+        <figcaption class="frame__tag">Dentro da plataforma</figcaption>
       </figure>
 
-      <!-- PLACEHOLDER 3 — troque por uma foto do treino sendo executado -->
-      <figure class="frame frame--vazio frame--larga" data-reveal style="--d:180ms">
-        <div class="frame__hint">
-          <svg class="ico" viewBox="0 0 24 24"><path d="M6.5 6.5h11M4 9.5h16M6.5 12.5h11"/><circle cx="12" cy="17" r="3"/></svg>
-          <b>Treino em execução</b>
-          <small>Foto ou frame de vídeo de um treino sendo feito em casa — o formato real das aulas.</small>
-        </div>
-        <span class="frame__tag">Como é o treino</span>
+      <figure class="frame frame--vintage frame--larga" data-reveal style="--d:180ms">
+        <video class="frame__video" src="assets/treino-vintage.mp4" poster="assets/treino-vintage-poster.jpg"
+               autoplay muted loop playsinline preload="metadata"
+               aria-label="Treino do desafio sendo executado"></video>
+        <span class="grao" aria-hidden="true"></span>
+        <figcaption class="frame__tag">Como é o treino</figcaption>
       </figure>
     </div>
   </div>
@@ -401,6 +391,6 @@
   </div>
 </div>
 
-<script src="script.js?v=21"></script>
+<script src="script.js?v=23"></script>
 </body>
 </html>

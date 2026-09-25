@@ -596,3 +596,8 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   .js .corners:not(.is-in) i{transform:none;opacity:1}
   .js .cover__media img{transform:none;filter:none}
 }
+
+
+/* Print do painel do Instagram, sem moldura inventada */
+.print{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0b0b10}
+.print img{width:100%;height:auto;display:block}

@@ -331,6 +331,8 @@ body.modal-aberto{overflow:hidden}
   .garantia{grid-template-columns:1fr;justify-items:center;text-align:center}
 }
 @media (max-width:640px){
+  .amostras{grid-template-columns:1fr}
+  .amostras .frame--larga{grid-column:span 1}
   .cover__media img{object-position:52% 14%}
   .cover{min-height:max(92svh,620px)}
   .stats__grid{grid-template-columns:repeat(2,1fr);gap:22px 0}

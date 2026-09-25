@@ -166,6 +166,9 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .amostras .frame{aspect-ratio:16/10}
 .amostras .frame--larga{grid-column:span 2;aspect-ratio:3/2}
 .frame__video{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+/* o filho com filtro escapa do border-radius do pai: herdar o raio resolve */
+.frame img,.frame__video,.grao{border-radius:inherit}
+.frame{overflow:hidden;overflow:clip}
 
 /* Tratamento vintage: cor lavada, grão em movimento e leve tremida */
 .frame--vintage img,.frame--vintage .frame__video{filter:sepia(.16) contrast(1.07) saturate(.86) brightness(.98)}

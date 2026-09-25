@@ -209,6 +209,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
    OFERTA — dois planos
    ========================================================================== */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.duo--solo{grid-template-columns:minmax(0,580px);justify-content:center}
 .duo__card{position:relative;padding:clamp(28px,3.4vw,44px);border-radius:var(--r-lg);border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));overflow:hidden}
 .duo__card--hot{border-color:rgba(255,51,102,.55);background:linear-gradient(160deg,rgba(255,51,102,.16),rgba(47,85,180,.1) 70%);box-shadow:0 40px 90px -45px rgba(255,51,102,.6)}
 .duo__tag{display:inline-block;padding:6px 13px;border-radius:99px;border:1px solid var(--line-2);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px}
@@ -311,6 +312,8 @@ body.modal-aberto{overflow:hidden}
   .garantia{grid-template-columns:1fr;justify-items:center;text-align:center}
 }
 @media (max-width:640px){
+  .cover__media img{object-position:52% 14%}
+  .cover{min-height:max(92svh,620px)}
   .stats__grid{grid-template-columns:repeat(2,1fr);gap:22px 0}
   .stats__cell:nth-child(3){padding-left:0;border-left:0}
   .stats__cell:nth-child(odd){padding-left:0}

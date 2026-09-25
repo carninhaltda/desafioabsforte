@@ -135,7 +135,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .cover__in{position:relative;padding-top:150px;padding-bottom:clamp(90px,12vh,124px)}
 .cover__title{font-size:clamp(40px,7vw,104px);line-height:.94;max-width:16ch}
 .cover__lead{margin-top:26px;max-width:560px;color:#dedee6;font-size:clamp(15.5px,1.3vw,18px)}
-.cover__lead b{color:#fff}
+.cover__lead b{color:var(--pink)}
 .cover__scroll{position:absolute;right:calc(var(--gutter) + 8px);bottom:clamp(36px,6vh,54px);z-index:3;display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#dedee6}
 .cover__scroll .ico{width:18px;height:18px;animation:nudge 1.8s var(--ease) infinite}
 @keyframes nudge{0%,100%{transform:translateY(-2px)}50%{transform:translateY(4px)}}

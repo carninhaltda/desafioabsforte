@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=33">
+<link rel="stylesheet" href="styles.css?v=34">
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
 <body>
@@ -50,13 +50,15 @@
       <h2 class="h2">Olha quem já <em>aplicou o desafio:</em></h2>
     </div>
 
-    <div class="provas">
+    <!-- Depoimentos escondidos até ter material real: tire o hidden dos 3 figures
+           e troque provas--solo por provas para voltar ao grid de 4 colunas. -->
+      <div class="provas provas--solo">
       <figure class="prova prova--foto" data-reveal>
         <img src="assets/antes-depois-1.jpg?v=2" alt="Antes e depois de aluno do desafio" loading="lazy">
       </figure>
 
       <!-- PLACEHOLDER: print de mensagem de aluno (WhatsApp, direct, comentário) -->
-      <figure class="prova prova--vazia" data-reveal style="--d:90ms">
+      <figure class="prova prova--vazia" data-reveal style="--d:90ms" hidden>
         <div class="prova__hint">
           <svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.6-4.9A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
           <b>Print de mensagem</b>
@@ -65,7 +67,7 @@
       </figure>
 
       <!-- PLACEHOLDER: outro antes e depois -->
-      <figure class="prova prova--vazia" data-reveal style="--d:180ms">
+      <figure class="prova prova--vazia" data-reveal style="--d:180ms" hidden>
         <div class="prova__hint">
           <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/></svg>
           <b>Outro antes e depois</b>
@@ -74,7 +76,7 @@
       </figure>
 
       <!-- PLACEHOLDER: depoimento em texto -->
-      <figure class="prova prova--depo" data-reveal style="--d:270ms">
+      <figure class="prova prova--depo" data-reveal style="--d:270ms" hidden>
         <span class="prova__aspas">&ldquo;</span>
         <blockquote>
           <!-- PREENCHER: frase do aluno, do jeito que ele escreveu -->
@@ -387,6 +389,6 @@
   </div>
 </div>
 
-<script src="script.js?v=33"></script>
+<script src="script.js?v=34"></script>
 </body>
 </html>

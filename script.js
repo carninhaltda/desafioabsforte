@@ -234,6 +234,87 @@
     });
   })();
 
+  /* ---------- Faixa da turma ----------
+     Edite APENAS as três linhas de TURMA abaixo.
+       ativa     : false deixa a faixa invisível no site inteiro.
+       primeira  : a segunda-feira em que a Turma 1 começa (AAAA-MM-DD).
+       intervalo : de quantas em quantas semanas abre uma turma nova.
+     As inscrições abrem sempre na quinta anterior e fecham no domingo, 23h59.
+     As turmas seguintes são calculadas sozinhas — a faixa nunca mostra uma data vencida. */
+  var TURMA = {
+    ativa: false,
+    primeira: '2026-10-19',
+    intervaloSemanas: 4
+  };
+
+  (function () {
+    var faixa = document.getElementById('turma');
+    if (!faixa || !TURMA.ativa) return;
+
+    var MES = ['janeiro','fevereiro','março','abril','maio','junho',
+               'julho','agosto','setembro','outubro','novembro','dezembro'];
+    var DIA = 86400000;
+
+    function emData(txt) {
+      var p = txt.split('-');
+      return new Date(+p[0], +p[1] - 1, +p[2], 0, 0, 0, 0);
+    }
+    function curto(d) {
+      return ('0' + d.getDate()).slice(-2) + '/' + ('0' + (d.getMonth() + 1)).slice(-2);
+    }
+    function contagem(ms) {
+      var min = Math.floor(ms / 60000);
+      var d = Math.floor(min / 1440), h = Math.floor((min % 1440) / 60), m = min % 60;
+      if (d > 0) return d + 'd ' + h + 'h';
+      if (h > 0) return h + 'h ' + m + 'min';
+      return m + 'min';
+    }
+
+    /* Primeira turma cujas inscrições ainda não fecharam. */
+    function turmaAtual() {
+      var inicio = emData(TURMA.primeira);
+      var passo = (TURMA.intervaloSemanas || 4) * 7 * DIA;
+      var agora = Date.now();
+      for (var i = 0; i < 260; i++) {
+        var fecha = new Date(inicio.getTime() - DIA);
+        fecha.setHours(23, 59, 59, 999);
+        if (agora <= fecha.getTime()) {
+          var abre = new Date(inicio.getTime() - 4 * DIA);
+          return { inicio: inicio, abre: abre, fecha: fecha };
+        }
+        inicio = new Date(inicio.getTime() + passo);
+      }
+      return null;
+    }
+
+    var pill = faixa.querySelector('.turma__pill');
+    var txt = faixa.querySelector('.turma__txt');
+    var prazo = faixa.querySelector('.turma__prazo');
+
+    function desenhar() {
+      var t = turmaAtual();
+      if (!t) { faixa.hidden = true; return; }
+      var agora = Date.now();
+      var mes = MES[t.inicio.getMonth()];
+
+      if (agora >= t.abre.getTime()) {
+        pill.textContent = 'Inscrições abertas';
+        txt.innerHTML = 'A <b>Turma de ' + mes + '</b> começa na segunda, ' + curto(t.inicio) +
+                        '. Quem entrar até domingo faz os 21 dias junto comigo, no grupo.';
+        prazo.textContent = 'Fecha em ' + contagem(t.fecha.getTime() - agora);
+      } else {
+        pill.textContent = 'Próxima turma';
+        txt.innerHTML = 'A <b>Turma de ' + mes + '</b> começa na segunda, ' + curto(t.inicio) +
+                        '. Comprando agora você já faz o Dia 1 hoje e entra no grupo quando a turma abrir.';
+        prazo.textContent = 'Inscrições abrem ' + curto(t.abre);
+      }
+      faixa.hidden = false;
+    }
+
+    desenhar();
+    setInterval(desenhar, 20000);
+  })();
+
   /* ---------- Microsoft Clarity ---------- */
   (function (c, l, a, r, i, t, y) {
     c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };

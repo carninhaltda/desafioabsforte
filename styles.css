@@ -230,6 +230,8 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 /* ---------- Prova: antes e depois + depoimentos ---------- */
 .provas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
 .provas--solo{grid-template-columns:minmax(0,440px);justify-content:center}
+.provas--tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+.provas--tres .prova{min-height:300px}
 .provas--solo .prova--foto{grid-row:auto;min-height:540px}
 .prova{position:relative;margin:0;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg-2);overflow:hidden;overflow:clip;min-height:340px;display:flex;flex-direction:column}
 .prova--foto{grid-row:span 2;padding:0}
@@ -368,6 +370,7 @@ body.modal-aberto{overflow:hidden}
    ========================================================================== */
 @media (max-width:1000px){
   .provas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .provas--tres{grid-template-columns:repeat(3,minmax(0,1fr))}
   .prova--foto{grid-row:span 2}
   .pcards{grid-template-columns:1fr}
   .fit,.duo,.prof{grid-template-columns:1fr}
@@ -379,6 +382,7 @@ body.modal-aberto{overflow:hidden}
 }
 @media (max-width:640px){
   .provas{grid-template-columns:1fr}
+  .provas--tres{grid-template-columns:1fr}
   .prova--foto{grid-row:auto;min-height:420px}
   .prova{min-height:260px}
   .amostras{grid-template-columns:1fr}

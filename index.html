@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=39">
+<link rel="stylesheet" href="styles.css?v=40">
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 </head>
 <body>
@@ -61,15 +61,12 @@
       <h2 class="h2">Olha quem já <em>aplicou o desafio:</em></h2>
     </div>
 
-    <!-- Depoimentos escondidos até ter material real: tire o hidden dos 3 figures
-         e troque provas--solo por provas para voltar ao grid de 4 colunas. -->
-    <div class="provas provas--solo">
-      <figure class="prova prova--foto" data-reveal>
-        <img src="assets/antes-depois-1.jpg?v=2" alt="Antes e depois de aluno do desafio" loading="lazy">
-      </figure>
+    <!-- PREENCHER: três espaços esperando material real de aluno.
+         Troque cada figure pelo conteúdo quando ele chegar. -->
+    <div class="provas provas--tres">
 
-      <!-- PLACEHOLDER: print de mensagem de aluno (WhatsApp, direct, comentário) -->
-      <figure class="prova prova--vazia" data-reveal style="--d:90ms" hidden>
+      <!-- 1. Print de mensagem de aluno (WhatsApp, direct, comentário) -->
+      <figure class="prova prova--vazia" data-reveal>
         <div class="prova__hint">
           <svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20.5l1.6-4.9A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>
           <b>Print de mensagem</b>
@@ -77,23 +74,22 @@
         </div>
       </figure>
 
-      <!-- PLACEHOLDER: outro antes e depois -->
-      <figure class="prova prova--vazia" data-reveal style="--d:180ms" hidden>
+      <!-- 2. Antes e depois -->
+      <figure class="prova prova--vazia" data-reveal style="--d:90ms">
         <div class="prova__hint">
           <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/></svg>
-          <b>Outro antes e depois</b>
+          <b>Antes e depois</b>
           <small>Duas fotos do mesmo aluno, no mesmo ângulo e na mesma luz, se possível.</small>
         </div>
       </figure>
 
-      <!-- PLACEHOLDER: depoimento em texto -->
-      <figure class="prova prova--depo" data-reveal style="--d:270ms" hidden>
-        <span class="prova__aspas">&ldquo;</span>
-        <blockquote>
-          <!-- PREENCHER: frase do aluno, do jeito que ele escreveu -->
-          Cole aqui a frase de um aluno, do jeito que ele escreveu, sem corrigir e sem enfeitar.
-        </blockquote>
-        <figcaption><b>Nome do aluno</b><span>cidade ou @ do Instagram</span></figcaption>
+      <!-- 3. Depoimento em texto -->
+      <figure class="prova prova--vazia" data-reveal style="--d:180ms">
+        <div class="prova__hint">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M8 10h8M8 14h5"/><path d="M21 12a8.5 8.5 0 0 1-9 8.4 8.6 8.6 0 0 1-3.8-.9L3 21l1.6-4.9A8.4 8.4 0 0 1 12 3.5a8.4 8.4 0 0 1 9 8.5z"/></svg>
+          <b>Depoimento em texto</b>
+          <small>A frase de um aluno, do jeito que ele escreveu, com o nome e a cidade.</small>
+        </div>
       </figure>
     </div>
   </div>
@@ -404,6 +400,6 @@
   </div>
 </div>
 
-<script src="script.js?v=39"></script>
+<script src="script.js?v=40"></script>
 </body>
 </html>

@@ -125,16 +125,16 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
    ========================================================================== */
 .cover{position:relative;min-height:max(100svh,720px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
 .cover__media{position:absolute;inset:0;z-index:-2;background:radial-gradient(120% 90% at 68% 28%,#2a1a24 0%,#0c0c10 60%,#07070a 100%)}
-.cover__media img{width:100%;height:100%;object-fit:cover;object-position:60% 15%;opacity:0;transition:opacity 1.2s var(--ease);transform-origin:60% 30%}
+.cover__media img{width:100%;height:100%;object-fit:cover;object-position:58% 42%;opacity:0;transition:opacity 1.2s var(--ease);transform-origin:60% 30%}
 .cover__media.is-loaded img,html:not(.js) .cover__media img{opacity:1}
 .cover__shade{position:absolute;inset:0;z-index:-1;background:
   linear-gradient(90deg,rgba(7,7,10,.94) 0%,rgba(7,7,10,.72) 34%,rgba(7,7,10,.15) 66%,rgba(7,7,10,.3) 100%),
-  linear-gradient(0deg,#07070a 0%,rgba(7,7,10,.6) 24%,rgba(7,7,10,0) 52%),
+  linear-gradient(0deg,#07070a 0%,rgba(7,7,10,.86) 12%,rgba(7,7,10,.34) 26%,rgba(7,7,10,0) 42%),
   linear-gradient(180deg,rgba(7,7,10,.6) 0%,rgba(7,7,10,0) 22%),
   radial-gradient(60% 60% at 0% 100%,rgba(255,51,102,.22),transparent 70%)}
 .cover__in{position:relative;padding-top:clamp(118px,15vh,150px);padding-bottom:clamp(76px,9vh,112px)}
-.cover__title{font-size:clamp(40px,6.4vw,96px);line-height:.94;max-width:17ch}
-.cover__lead{margin-top:26px;max-width:560px;color:#dedee6;font-size:clamp(15.5px,1.3vw,18px)}
+.cover__title{font-size:clamp(40px,6.4vw,96px);line-height:.94;max-width:17ch;text-shadow:0 2px 28px rgba(7,7,10,.6)}
+.cover__lead{margin-top:26px;max-width:560px;color:#dedee6;font-size:clamp(15.5px,1.3vw,18px);text-shadow:0 1px 16px rgba(7,7,10,.75)}
 .cover__lead b{color:var(--pink)}
 /* ---------- Faixa da turma ---------- */
 .turma{position:relative;z-index:4;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--grad-soft);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
@@ -155,6 +155,37 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 
 .cover__cta{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
 .cover__cta-note{font-size:13px;color:var(--muted-2)}
+/* Ate 900px a foto ocupa so a parte de cima da capa, pra o abdomen nao ficar atras do titulo */
+@media (max-width:900px){
+  .cover{min-height:max(100svh,700px)}
+  .cover__media{inset:0 0 auto 0;height:67%}
+  .cover__media img{object-position:52% 0;
+    -webkit-mask-image:linear-gradient(180deg,#000 90%,transparent 100%);
+            mask-image:linear-gradient(180deg,#000 90%,transparent 100%)}
+  .cover__shade{background:
+    linear-gradient(90deg,rgba(7,7,10,.72) 0%,rgba(7,7,10,.3) 40%,rgba(7,7,10,0) 72%),
+    linear-gradient(0deg,#07070a 0%,#07070a 26%,rgba(7,7,10,0) 40%),
+    linear-gradient(180deg,rgba(7,7,10,.55) 0%,rgba(7,7,10,0) 16%),
+    radial-gradient(70% 40% at 0% 100%,rgba(255,51,102,.18),transparent 70%)}
+  .cover__title{font-size:clamp(32px,4.4vw,44px);max-width:none;text-shadow:none}
+  .cover__lead{margin-top:14px;font-size:clamp(15px,1.9vw,17px);text-shadow:none}
+}
+
+/* Telas largas: a foto ganha uma coluna a direita, assim o corpo inteiro cabe */
+@media (min-width:901px){
+  .cover__media{inset:0 0 0 30%}
+  .cover__media img{object-position:50% 50%;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%);
+            mask-image:linear-gradient(90deg,transparent 0%,#000 26%)}
+  .cover__shade{background:
+    linear-gradient(90deg,#07070a 0%,rgba(7,7,10,.92) 26%,rgba(7,7,10,.34) 46%,rgba(7,7,10,.08) 64%,rgba(7,7,10,.34) 100%),
+    linear-gradient(0deg,#07070a 0%,rgba(7,7,10,.5) 16%,rgba(7,7,10,0) 38%),
+    linear-gradient(180deg,rgba(7,7,10,.6) 0%,rgba(7,7,10,0) 20%),
+    radial-gradient(60% 60% at 0% 100%,rgba(255,51,102,.22),transparent 70%)}
+  .cover__title{max-width:14ch}
+  .cover__lead{max-width:440px}
+}
+
 .cover__scroll{position:absolute;right:calc(var(--gutter) + 8px);bottom:clamp(36px,6vh,54px);z-index:3;display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#dedee6}
 .cover__scroll .ico{width:18px;height:18px;animation:nudge 1.8s var(--ease) infinite}
 @keyframes nudge{0%,100%{transform:translateY(-2px)}50%{transform:translateY(4px)}}
@@ -387,8 +418,6 @@ body.modal-aberto{overflow:hidden}
   .prova{min-height:260px}
   .amostras{grid-template-columns:1fr}
   .amostras .frame--larga{grid-column:span 1}
-  .cover__media img{object-position:52% 14%}
-  .cover{min-height:max(92svh,620px)}
   .stats__grid{grid-template-columns:repeat(2,1fr);gap:22px 0}
   .stats__cell:nth-child(3){padding-left:0;border-left:0}
   .stats__cell:nth-child(odd){padding-left:0}
@@ -400,7 +429,7 @@ body.modal-aberto{overflow:hidden}
   .cover__cta{margin-top:28px;gap:12px}
   .cover__cta .btn{display:flex;width:100%}
   .cover__cta .btn__txt{flex:1;justify-content:center}
-  .cover__in{padding-top:130px}
+  .cover__in{padding-top:120px;padding-bottom:26px}
   .brand span{display:none}
 }
 @media (prefers-reduced-motion:reduce){

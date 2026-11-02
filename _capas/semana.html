@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>capa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:560px;height:784px;overflow:hidden;background:#07070a}
+.capa{
+  position:relative;width:560px;height:784px;
+  background:
+    radial-gradient(78% 52% at 50% 30%, #23232c 0%, #121217 46%, #0A0A0C 100%);
+  overflow:hidden;
+}
+.capa::before{
+  content:"";position:absolute;left:50%;top:27%;transform:translate(-50%,-50%);
+  width:448px;height:448px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 66%);
+}
+.capa::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(7,7,10,.35) 0%, rgba(7,7,10,0) 26%, rgba(7,7,10,0) 74%, rgba(7,7,10,.55) 100%);
+}
+.emb{position:absolute;z-index:2;left:50%;top:33%;transform:translate(-50%,-50%);width:262px;height:auto;display:block}
+.txt{position:absolute;z-index:2;left:0;right:0;top:66%;text-align:center}
+.txt b{
+  display:block;font-family:Archivo,sans-serif;font-weight:800;
+  font-size:86px;line-height:.88;letter-spacing:-.035em;text-transform:uppercase;
+  color:#fff;
+}
+
+</style>
+</head>
+<body>
+<div class="capa">
+  <img class="emb" src="../assets/marca/emblema/emblema-vetor-branco.svg" alt="">
+  <div class="txt"><b id="t">Semana 1</b></div>
+</div>
+<script>
+var n = new URLSearchParams(location.search).get('n') || '1';
+document.getElementById('t').textContent = 'Semana ' + n;
+</script>
+</body>
+</html>

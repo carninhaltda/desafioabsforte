@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>capa inicio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:560px;height:784px;overflow:hidden;background:#07070a}
+.capa{position:relative;width:560px;height:784px;overflow:hidden;background:#07070a}
+.foto{position:absolute;inset:0}
+.foto img{width:100%;height:100%;object-fit:cover;object-position:52% 16%;display:block}
+.sombra{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(7,7,10,.94) 0%, rgba(7,7,10,.72) 12%, rgba(7,7,10,.26) 28%, rgba(7,7,10,.22) 44%, rgba(7,7,10,.82) 72%, #07070a 100%),
+    radial-gradient(70% 46% at 50% 8%, rgba(7,7,10,.7), rgba(7,7,10,0) 70%);
+}
+.emb{position:absolute;z-index:3;top:46px;left:50%;transform:translateX(-50%);width:90px;height:auto}
+.txt{position:absolute;z-index:3;left:0;right:0;bottom:122px;text-align:center;padding:0 40px}
+.txt b{
+  display:block;font-family:Archivo,sans-serif;font-weight:800;
+  font-size:70px;line-height:.9;letter-spacing:-.035em;text-transform:uppercase;color:#fff;
+  text-shadow:0 4px 34px rgba(7,7,10,.78);
+}
+
+</style>
+</head>
+<body>
+<div class="capa">
+  <div class="foto"><img src="../assets/hero-carninha.webp" alt=""></div>
+  <div class="sombra"></div>
+  <img class="emb" src="../assets/marca/emblema/emblema-vetor-branco.svg" alt="">
+  <div class="txt"><b>21 dias<br>1 objetivo.</b></div>
+</div>
+</body>
+</html>

@@ -263,6 +263,16 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .provas--solo{grid-template-columns:minmax(0,440px);justify-content:center}
 .provas--tres{grid-template-columns:repeat(3,minmax(0,1fr))}
 .provas--tres .prova{min-height:300px}
+.provas--duo{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:900px;margin:0 auto}
+.ad{position:relative;margin:0;border-radius:var(--r-lg);overflow:hidden;overflow:clip;border:1px solid var(--line);background:var(--bg-2)}
+.ad img{display:block;width:100%;height:auto;border-radius:inherit}
+.ad__tags{position:absolute;inset:0 0 auto 0;z-index:2;display:grid;grid-template-columns:1fr 1fr;
+  padding:14px 10px 30px;background:linear-gradient(180deg,rgba(7,7,10,.78),rgba(7,7,10,0))}
+.ad__tags span{justify-self:center;padding:6px 15px;border-radius:99px;
+  background:rgba(7,7,10,.55);border:1px solid rgba(255,255,255,.26);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.ad__tags span:last-child{background:var(--pink);border-color:var(--pink);color:#0A0A0C}
 .provas--solo .prova--foto{grid-row:auto;min-height:540px}
 .prova{position:relative;margin:0;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg-2);overflow:hidden;overflow:clip;min-height:340px;display:flex;flex-direction:column}
 .prova--foto{grid-row:span 2;padding:0}
@@ -402,6 +412,7 @@ body.modal-aberto{overflow:hidden}
 @media (max-width:1000px){
   .provas{grid-template-columns:repeat(2,minmax(0,1fr))}
   .provas--tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .provas--duo{grid-template-columns:repeat(2,minmax(0,1fr))}
   .prova--foto{grid-row:span 2}
   .pcards{grid-template-columns:1fr}
   .fit,.duo,.prof{grid-template-columns:1fr}
@@ -414,6 +425,9 @@ body.modal-aberto{overflow:hidden}
 @media (max-width:640px){
   .provas{grid-template-columns:1fr}
   .provas--tres{grid-template-columns:1fr}
+  .provas--duo{grid-template-columns:1fr;max-width:420px}
+  .ad__tags{padding:11px 8px 26px}
+  .ad__tags span{padding:5px 12px;font-size:10.5px;letter-spacing:.13em}
   .prova--foto{grid-row:auto;min-height:420px}
   .prova{min-height:260px}
   .amostras{grid-template-columns:1fr}

@@ -1,4 +1,4 @@
-# Desafio Abdômen Mais Forte da História — página de vendas
+# Desafio Abdômen Forte — página de vendas
 
 Arquivos:
 - `index.html` — a página inteira

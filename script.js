@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DESAFIO AMFH — comportamento da página
+   DESAFIO ABDOMEN FORTE - comportamento da pagina
    Entradas com fade, barra de progresso, grade dos 21 dias, popup e Clarity.
    ========================================================================== */
 (function () {

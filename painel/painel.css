@@ -16,7 +16,7 @@ button{font-family:inherit;cursor:pointer}
 .wrap{max-width:720px;margin:0 auto;padding:0 18px 70px}
 
 .topo{display:flex;align-items:center;gap:14px;max-width:720px;margin:0 auto;padding:26px 18px 22px}
-.topo img{width:46px;height:46px;border-radius:50%;flex:none}
+.topo img{width:42px;height:42px;flex:none;object-fit:contain}
 .topo h1{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(19px,4.6vw,26px);line-height:1.1}
 .topo p{color:var(--muted);font-size:13.5px}
 

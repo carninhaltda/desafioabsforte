@@ -160,7 +160,7 @@
       return d.length === 11 || d.length === 10;
     }
 
-    $$('a.btn[href*="pay.hotmart.com"]').forEach(function (link) {
+    $$('a.btn[href*="pay.cakto.com.br"], a.btn[href*="pay.hotmart.com"]').forEach(function (link) {
       link.addEventListener('click', function (ev) {
         if (!WEBHOOK || jaEnviou()) return;
         ev.preventDefault();

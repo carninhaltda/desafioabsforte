@@ -322,11 +322,14 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .duo__desc{color:var(--muted);font-size:15px}
 .preco{margin:26px 0 8px}
 .preco__de{color:var(--muted-2);text-decoration:line-through;font-size:14px}
-.preco__main{display:flex;align-items:baseline;gap:10px;margin-top:4px}
+.preco__parc{display:block;font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.preco__main{display:flex;align-items:baseline;gap:10px;margin-top:2px}
 .preco__main b{font-family:var(--f-display);font-weight:800;font-stretch:110%;font-size:clamp(42px,5.6vw,66px);line-height:1}
 .duo__card--hot .preco__main b{color:var(--pink)}
 .preco__main i{font-style:normal;font-size:.42em}
-.preco__nota{color:var(--muted);font-size:13.5px;margin-top:8px}
+.preco__vista{margin-top:7px;font-size:16px;color:var(--nevoa,#C9C9D2)}
+.preco__vista b{font-weight:600;color:#fff}
+.preco__nota{color:var(--muted);font-size:13.5px;margin-top:10px}
 .duo .checks{margin:24px 0;padding-top:22px;border-top:1px solid var(--line)}
 .duo .checks li{padding:0;border:0;background:none;font-size:14.5px}
 .entrega{display:grid;gap:10px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}

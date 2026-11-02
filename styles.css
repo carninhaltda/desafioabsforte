@@ -305,9 +305,6 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 /* ---------- Professor ---------- */
 .prof{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,4vw,56px);align-items:center}
 .prof .frame{aspect-ratio:4/5}
-.prof__badge{position:absolute;right:-12px;bottom:-16px;z-index:4;padding:14px 20px;border-radius:18px;background:var(--grad);text-align:center;box-shadow:0 30px 70px -30px rgba(255,51,102,.8)}
-.prof__badge b{display:block;font-family:var(--f-display);font-weight:800;font-size:26px;line-height:1}
-.prof__badge span{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .prof__txt p{color:var(--muted);margin-top:18px;font-size:15.5px}
 .prof__txt p:first-of-type{color:#e6e6ec;font-size:17px}
 .prof__txt b{color:#fff}

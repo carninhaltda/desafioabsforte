@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>capa testo wide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#07070a}
+.capa{
+  position:relative;width:1920px;height:1080px;
+  background:radial-gradient(70% 90% at 22% 50%, #1b1b22 0%, #111116 44%, #0A0A0C 100%);
+  overflow:hidden;font-family:Inter,sans-serif;
+}
+/* brilho rosa da marca, canto inferior direito */
+.capa::before{
+  content:"";position:absolute;right:-6%;bottom:-18%;
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,51,102,.20) 0%, rgba(255,51,102,0) 66%);
+}
+/* vinheta */
+.capa::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(7,7,10,.38) 0%, rgba(7,7,10,0) 22%, rgba(7,7,10,0) 78%, rgba(7,7,10,.55) 100%);
+}
+.fantasma{
+  position:absolute;z-index:1;right:-190px;top:50%;transform:translateY(-50%);
+  font-family:Archivo,sans-serif;font-weight:800;font-size:930px;line-height:.78;
+  letter-spacing:-.05em;color:transparent;
+  -webkit-text-stroke:3px rgba(255,255,255,.055);
+  white-space:nowrap;
+}
+.topo{position:absolute;z-index:3;left:112px;top:104px;display:flex;align-items:center;gap:26px}
+.risco{width:62px;height:5px;background:#FF3366;border-radius:3px}
+.topo span{font-size:23px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:#E8E8EE}
+.emb{position:absolute;z-index:3;top:88px;right:112px;width:98px;height:auto}
+.marca{
+  position:absolute;z-index:3;left:112px;top:50%;transform:translateY(-52%);
+  font-family:Archivo,sans-serif;font-weight:800;font-size:292px;line-height:.88;
+  letter-spacing:-.045em;text-transform:uppercase;color:#fff;white-space:nowrap;
+}
+.marca em{font-style:normal;color:#FF3366}
+.base{position:absolute;z-index:3;left:112px;right:112px;bottom:104px;display:flex;align-items:center;gap:30px}
+.base i{display:block;width:140px;height:1px;background:rgba(255,255,255,.22);flex:none}
+.base span{font-size:23px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:#C9C9D2}
+</style>
+</head>
+<body>
+<div class="capa">
+  <div class="fantasma">1K</div>
+  <div class="topo"><i class="risco"></i><span>Programa</span></div>
+  <img class="emb" src="../assets/marca/emblema/emblema-vetor-branco.svg" alt="">
+  <div class="marca">Testo <em>1K</em></div>
+  <div class="base"><i></i><span>Desafio Abdômen Forte</span></div>
+</div>
+</body>
+</html>

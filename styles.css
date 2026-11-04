@@ -224,8 +224,8 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .amostras{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
 .amostras .frame{aspect-ratio:16/10}
 .amostras .frame--larga{grid-column:span 2;aspect-ratio:3/2}
-#oferta .amostras{margin:0 0 30px}
-#oferta .amostras .frame--larga{aspect-ratio:16/9}
+.amostras--recebe{margin-top:26px}
+.amostras--recebe .frame--larga{aspect-ratio:16/9}
 .frame__video{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
 /* o filho com filtro escapa do border-radius do pai: herdar o raio resolve */
 .frame img,.frame__video,.grao{border-radius:inherit}

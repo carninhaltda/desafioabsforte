@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>capa comer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:560px;height:784px;overflow:hidden;background:#07070a}
+.capa{
+  position:relative;width:560px;height:784px;
+  background:radial-gradient(78% 52% at 50% 34%, #23232c 0%, #121217 46%, #0A0A0C 100%);
+  overflow:hidden;
+}
+.capa::before{
+  content:"";position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+  width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,255,255,.09) 0%, rgba(255,255,255,0) 66%);
+}
+.capa::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(7,7,10,.4) 0%, rgba(7,7,10,0) 24%, rgba(7,7,10,0) 76%, rgba(7,7,10,.6) 100%);
+}
+.emb{position:absolute;z-index:3;top:32px;right:32px;width:64px;height:auto}
+.icone{position:absolute;z-index:2;left:50%;top:33%;transform:translate(-50%,-50%)}
+.txt{position:absolute;z-index:2;left:0;right:0;top:56%;text-align:center;padding:0 34px}
+.txt b{
+  display:block;font-family:Archivo,sans-serif;font-weight:800;
+  font-size:62px;line-height:.9;letter-spacing:-.035em;text-transform:uppercase;color:#fff;
+}
+.txt b em{font-style:normal;color:#FF3366;display:block}
+.sel{
+  position:absolute;z-index:2;left:50%;transform:translateX(-50%);bottom:66px;
+  padding:9px 20px;border-radius:99px;border:1px solid rgba(255,255,255,.26);
+  font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:#C9C9D2;white-space:nowrap;
+}
+</style>
+</head>
+<body>
+<div class="capa">
+  <img class="emb" src="../assets/marca/emblema/emblema-vetor-branco.svg" alt="">
+
+  <svg class="icone" width="150" height="150" viewBox="0 0 48 48" fill="none"
+       stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"
+       role="img" aria-label="Prato e talheres">
+    <circle cx="20" cy="26" r="13"></circle>
+    <circle cx="20" cy="26" r="7.5" stroke="#FF3366"></circle>
+    <path d="M38 9v14"></path>
+    <path d="M38 23v16"></path>
+    <path d="M34 9v8a4 4 0 0 0 8 0V9"></path>
+  </svg>
+
+  <div class="txt"><b>Comendo bem,<em>gastando pouco</em></b></div>
+  <span class="sel">5 cardápios · lista de mercado</span>
+</div>
+</body>
+</html>

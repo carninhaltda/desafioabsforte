@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>capa testo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:560px;height:784px;overflow:hidden;background:#07070a}
+.capa{
+  position:relative;width:560px;height:784px;
+  background:radial-gradient(76% 50% at 50% 40%, #26262f 0%, #121217 48%, #0A0A0C 100%);
+  overflow:hidden;
+}
+.capa::before{
+  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:470px;height:470px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,51,102,.16) 0%, rgba(255,51,102,0) 68%);
+}
+.capa::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(7,7,10,.42) 0%, rgba(7,7,10,0) 24%, rgba(7,7,10,0) 76%, rgba(7,7,10,.6) 100%);
+}
+.emb{position:absolute;z-index:3;top:32px;right:32px;width:64px;height:auto}
+.txt{position:absolute;z-index:2;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 34px}
+.kit{
+  display:block;font-family:Inter,sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:.42em;text-transform:uppercase;color:#C9C9D2;margin-bottom:20px;
+  text-indent:.42em;
+}
+.txt b{
+  display:block;font-family:Archivo,sans-serif;font-weight:800;
+  font-size:112px;line-height:.86;letter-spacing:-.04em;text-transform:uppercase;color:#fff;
+}
+.txt b em{font-style:normal;color:#FF3366;display:block}
+.sel{
+  position:absolute;z-index:2;left:50%;transform:translateX(-50%);bottom:66px;
+  padding:9px 20px;border-radius:99px;border:1px solid rgba(255,255,255,.26);
+  font-family:Inter,sans-serif;font-size:11px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:#C9C9D2;white-space:nowrap;
+}
+</style>
+</head>
+<body>
+<div class="capa">
+  <img class="emb" src="../assets/marca/emblema/emblema-vetor-branco.svg" alt="">
+  <div class="txt">
+    <span class="kit">Kit</span>
+    <b>Testo<em>1K</em></b>
+  </div>
+  <span class="sel">Os 30 dias depois do dia 21</span>
+</div>
+</body>
+</html>

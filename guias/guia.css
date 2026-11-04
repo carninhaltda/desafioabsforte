@@ -101,6 +101,7 @@ a{color:var(--rosa);text-decoration:none;word-break:break-word}
 .cartao .n{font-family:var(--display);font-weight:800;font-size:11pt;color:var(--rosa);line-height:1}
 .cartao b{display:block;margin-top:2.5mm;font-size:10pt;font-weight:600}
 .cartao p{margin-top:2mm;font-size:9pt;line-height:1.5;color:var(--nevoa)}
+.cartao p b{display:inline;margin:0;font-size:inherit;font-weight:600;color:#fff}
 
 /* semana exemplo */
 .semana{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2mm;margin-top:5mm}

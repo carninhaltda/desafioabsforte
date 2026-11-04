@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora de gasto calórico · Desafio Abdômen Forte</title>
+<meta name="description" content="Descubra quantas calorias o seu corpo gasta por dia. Calculadora de taxa metabólica basal e gasto energético total do Desafio Abdômen Forte.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/marca/emblema/emblema-vetor-rosa.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --preto:#0A0A0C; --grafite:#17171C; --grafite-2:#1E1E25;
+  --linha:#2A2A32; --linha-2:rgba(255,255,255,.18);
+  --rosa:#FF3366; --rosa-escuro:#C41F4F;
+  --nevoa:#C9C9D2; --cinza:#8E8E9A;
+  --display:'Archivo','Arial Black',sans-serif;
+  --corpo:'Inter',system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--preto);color:#fff;font-family:var(--corpo);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+img,svg{display:block}
+h1,h2{margin:0;font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1}
+p{margin:0}
+
+.wrap{max-width:860px;margin:0 auto;padding:clamp(28px,5vw,56px) clamp(18px,4vw,36px) 64px}
+
+/* topo */
+.topo{display:flex;align-items:center;gap:14px;margin-bottom:clamp(26px,4vw,38px)}
+.topo img{width:42px;height:auto;flex:none}
+.topo span{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cinza)}
+
+.olho{display:inline-flex;align-items:center;gap:11px;font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa);margin-bottom:14px}
+.olho::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--rosa)}
+h1{font-size:clamp(28px,5.2vw,44px)}
+h1 em{font-style:normal;color:var(--rosa)}
+.sub{margin-top:16px;max-width:560px;color:var(--nevoa);font-size:clamp(14.5px,1.6vw,16.5px)}
+
+/* formulario */
+form{margin-top:clamp(28px,4vw,40px)}
+fieldset{margin:0 0 22px;padding:0;border:0;min-width:0}
+legend,.rot{display:block;padding:0;margin-bottom:10px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--cinza)}
+
+.pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{position:relative;flex:1 1 140px}
+.pill input{position:absolute;opacity:0;width:0;height:0}
+.pill span{
+  display:flex;align-items:center;justify-content:center;min-height:52px;padding:10px 16px;
+  border-radius:14px;border:1px solid var(--linha);background:var(--grafite);
+  font-size:15px;font-weight:600;color:var(--nevoa);cursor:pointer;text-align:center;
+  transition:border-color .25s var(--ease),background .25s var(--ease),color .25s var(--ease);
+}
+.pill input:checked + span{background:var(--rosa);border-color:var(--rosa);color:#0A0A0C}
+.pill input:focus-visible + span{outline:2px solid #fff;outline-offset:2px}
+.pill span:hover{border-color:var(--linha-2)}
+
+.linha3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.campo{display:flex;flex-direction:column}
+.campo input{
+  min-height:56px;padding:12px 16px;border-radius:14px;
+  border:1px solid var(--linha);background:var(--grafite);color:#fff;
+  font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;
+  transition:border-color .25s var(--ease);width:100%;
+}
+.campo input::placeholder{font-family:var(--corpo);font-weight:400;font-size:15px;color:#5E5E6B;letter-spacing:0}
+.campo input:focus{outline:none;border-color:var(--rosa)}
+.campo input[aria-invalid="true"]{border-color:var(--rosa)}
+.campo input::-webkit-outer-spin-button,.campo input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.campo input[type=number]{-moz-appearance:textfield}
+
+.ativ{display:grid;gap:10px}
+.ativ .pill{flex:none}
+.ativ .pill span{justify-content:flex-start;text-align:left;flex-direction:column;align-items:flex-start;gap:3px;min-height:auto;padding:14px 18px}
+.ativ b{font-size:15px;font-weight:600}
+.ativ small{font-size:12.5px;font-weight:400;line-height:1.45;opacity:.8}
+.ativ input:checked + span small{opacity:.78}
+
+.btn{
+  display:flex;width:100%;align-items:center;justify-content:center;gap:10px;
+  min-height:58px;margin-top:8px;border:0;border-radius:99px;cursor:pointer;
+  background:var(--rosa);color:#0A0A0C;
+  font-family:var(--corpo);font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  transition:transform .12s var(--ease),filter .25s var(--ease);
+}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:scale(.985)}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+.erro{margin-top:14px;padding:13px 16px;border-radius:12px;background:rgba(255,51,102,.14);border:1px solid rgba(255,51,102,.5);font-size:14px;color:#FFD2DD}
+.erro[hidden]{display:none}
+
+/* resultado */
+.res{margin-top:clamp(30px,4vw,44px)}
+.res[hidden]{display:none}
+.topo-res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cartao{padding:22px 24px;border-radius:18px;border:1px solid var(--linha);background:var(--grafite)}
+.cartao--destaque{background:linear-gradient(135deg,rgba(255,51,102,.18),rgba(255,51,102,.05));border-color:rgba(255,51,102,.45)}
+.cartao .rot{margin-bottom:8px}
+.cartao .num{font-family:var(--display);font-weight:800;font-size:clamp(34px,6.4vw,50px);line-height:1;letter-spacing:-.02em;color:#fff;margin-top:0}
+.cartao--destaque .num{color:var(--rosa)}
+.cartao--destaque .num i{color:var(--rosa);opacity:.72}
+.cartao .num i{font-style:normal;font-size:.34em;font-weight:700;margin-left:6px;letter-spacing:.04em;color:var(--cinza)}
+.cartao p{margin-top:10px;font-size:13px;line-height:1.5;color:var(--cinza)}
+
+.faixa{margin-top:12px;border-radius:18px;border:1px solid var(--linha);background:var(--grafite);overflow:hidden}
+.faixa h2{padding:18px 24px 0;font-size:15px;letter-spacing:.04em}
+.faixa ul{list-style:none;margin:14px 0 0;padding:0}
+.faixa li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:13px 24px;border-top:1px solid var(--linha)}
+.faixa li b{font-size:14.5px;font-weight:600;color:#fff}
+.faixa li small{display:block;font-size:12.5px;font-weight:400;color:var(--cinza);margin-top:2px}
+.faixa li span{flex:none;font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.01em;white-space:nowrap}
+.faixa li span i{font-style:normal;font-size:.56em;font-weight:700;color:var(--cinza);margin-left:4px}
+
+.conta{margin-top:12px;border-radius:18px;border:1px solid var(--linha);background:var(--grafite)}
+.conta summary{padding:16px 24px;cursor:pointer;font-size:13.5px;font-weight:600;color:var(--nevoa);list-style:none}
+.conta summary::-webkit-details-marker{display:none}
+.conta summary::after{content:"+";float:right;color:var(--rosa);font-weight:700}
+.conta[open] summary::after{content:"–"}
+.conta div{padding:0 24px 20px;font-size:13.5px;line-height:1.65;color:var(--cinza)}
+.conta code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;color:var(--nevoa)}
+
+.aviso{margin-top:22px;padding:18px 22px;border-radius:16px;border:1px solid var(--linha);border-left:3px solid var(--rosa);background:rgba(255,255,255,.03);font-size:13.5px;line-height:1.65;color:var(--nevoa)}
+.aviso b{color:#fff;font-weight:600}
+
+.rodape{margin-top:30px;font-size:12.5px;line-height:1.7;color:var(--cinza)}
+
+@media (max-width:620px){
+  .linha3{grid-template-columns:1fr 1fr}
+  .linha3 .campo:first-child{grid-column:span 2}
+  .topo-res{grid-template-columns:1fr}
+  .faixa li{flex-direction:column;align-items:flex-start;gap:6px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topo">
+    <img src="../assets/marca/emblema/emblema-vetor-branco.svg" alt="Desafio Abdômen Forte" width="42" height="42">
+    <span>Desafio Abdômen Forte</span>
+  </header>
+
+  <p class="olho">Ferramenta do aluno</p>
+  <h1>Quantas calorias o <em>seu corpo gasta</em> por dia?</h1>
+  <p class="sub">Preenche os quatro campos abaixo e você descobre dois números: o que o seu corpo queima parado e o que ele queima com a sua rotina de treino.</p>
+
+  <form id="f" novalidate>
+
+    <fieldset>
+      <legend>Sexo biológico</legend>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="sexo" value="h" checked><span>Homem</span></label>
+        <label class="pill"><input type="radio" name="sexo" value="m"><span>Mulher</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Seus dados</legend>
+      <div class="linha3">
+        <div class="campo">
+          <label class="rot" for="idade">Idade</label>
+          <input type="number" id="idade" inputmode="numeric" placeholder="anos" min="14" max="100" step="1">
+        </div>
+        <div class="campo">
+          <label class="rot" for="peso">Peso</label>
+          <input type="number" id="peso" inputmode="decimal" placeholder="kg" min="30" max="300" step="0.1">
+        </div>
+        <div class="campo">
+          <label class="rot" for="altura">Altura</label>
+          <input type="number" id="altura" inputmode="numeric" placeholder="cm" min="120" max="230" step="1">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Como está a sua semana</legend>
+      <div class="ativ">
+        <label class="pill"><input type="radio" name="ativ" value="1.2">
+          <span><b>Parado</b><small>Trabalho sentado e nenhum treino na semana.</small></span></label>
+        <label class="pill"><input type="radio" name="ativ" value="1.375" checked>
+          <span><b>Leve</b><small>Treino de 1 a 3 vezes por semana. É aqui que a maioria entra no desafio.</small></span></label>
+        <label class="pill"><input type="radio" name="ativ" value="1.55">
+          <span><b>Moderado</b><small>Treino de 3 a 5 vezes por semana.</small></span></label>
+        <label class="pill"><input type="radio" name="ativ" value="1.725">
+          <span><b>Intenso</b><small>Treino de 6 a 7 vezes por semana, ou trabalho braçal.</small></span></label>
+        <label class="pill"><input type="radio" name="ativ" value="1.9">
+          <span><b>Atleta</b><small>Dois treinos por dia, ou esforço físico pesado todos os dias.</small></span></label>
+      </div>
+    </fieldset>
+
+    <button class="btn" type="submit">Calcular</button>
+    <p class="erro" id="erro" role="alert" hidden></p>
+  </form>
+
+  <section class="res" id="res" aria-live="polite" hidden>
+
+    <div class="topo-res">
+      <div class="cartao">
+        <p class="rot">Parado o dia inteiro</p>
+        <p class="num"><span id="tmb">0</span><i>kcal</i></p>
+        <p>É o que o corpo queima só pra te manter vivo: coração batendo, pulmão funcionando, cérebro ligado. Chama taxa metabólica basal.</p>
+      </div>
+      <div class="cartao cartao--destaque">
+        <p class="rot">Com a sua rotina</p>
+        <p class="num"><span id="get">0</span><i>kcal</i></p>
+        <p>É o gasto do seu dia inteiro, já contando o treino e tudo que você faz acordado. Esse é o número que importa.</p>
+      </div>
+    </div>
+
+    <div class="faixa">
+      <h2>Referência geral</h2>
+      <ul>
+        <li>
+          <div><b>Manter o peso</b><small>Comer perto do que você gasta.</small></div>
+          <span id="manter">0<i>kcal</i></span>
+        </li>
+        <li>
+          <div><b>Perder gordura, com calma</b><small>Corte de 15%. Mais devagar, porém muito mais fácil de sustentar.</small></div>
+          <span id="deficit">0<i>kcal</i></span>
+        </li>
+        <li>
+          <div><b>Ganhar massa</b><small>Acréscimo de 10%, junto com treino de força.</small></div>
+          <span id="superavit">0<i>kcal</i></span>
+        </li>
+      </ul>
+    </div>
+
+    <details class="conta">
+      <summary>Como essa conta foi feita</summary>
+      <div>
+        <p>A taxa metabólica basal sai pela equação de <b>Mifflin-St Jeor</b>, publicada em 1990, que é a mais usada hoje por ser mais precisa que a de Harris-Benedict para a maioria das pessoas.</p>
+        <p style="margin-top:10px"><code id="formula"></code></p>
+        <p style="margin-top:10px">Depois esse resultado é multiplicado pelo fator da sua rotina (<code id="fator"></code>) para chegar no gasto do dia inteiro.</p>
+      </div>
+    </details>
+
+    <p class="aviso">
+      <b>Isso aqui é uma estimativa, não um plano alimentar.</b> A conta usa uma média da população e não enxerga a sua composição corporal, o seu histórico, remédios que você toma nem condição de saúde. Plano alimentar individualizado é trabalho de nutricionista. Use esses números como ponto de partida e, se for mudar a sua alimentação de verdade, procure um profissional.
+    </p>
+
+  </section>
+
+  <p class="rodape">
+    Desafio Abdômen Forte · João Gabriel dos Anjos (Carninha).<br>
+    Equação de Mifflin MD, St Jeor ST et al., <i>American Journal of Clinical Nutrition</i>, 1990. Os valores são estimativas e variam de pessoa para pessoa.
+  </p>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var f = $('f'), erro = $('erro'), res = $('res');
+  var CHAVE = 'af_calc_v1';
+
+  function num(v) { return Math.round(v).toLocaleString('pt-BR'); }
+  function marcado(nome) {
+    var el = f.querySelector('input[name="' + nome + '"]:checked');
+    return el ? el.value : null;
+  }
+
+  function falha(msg, campo) {
+    erro.textContent = msg;
+    erro.hidden = false;
+    if (campo) { campo.setAttribute('aria-invalid', 'true'); campo.focus(); }
+    return false;
+  }
+
+  function limpar() {
+    erro.hidden = true;
+    ['idade', 'peso', 'altura'].forEach(function (id) {
+      $(id).setAttribute('aria-invalid', 'false');
+    });
+  }
+
+  function calcular() {
+    limpar();
+    var idade = parseFloat($('idade').value);
+    var peso = parseFloat($('peso').value);
+    var altura = parseFloat($('altura').value);
+
+    if (!(idade >= 14 && idade <= 100)) return falha('Coloca a sua idade, entre 14 e 100 anos.', $('idade'));
+    if (!(peso >= 30 && peso <= 300)) return falha('Coloca o seu peso em quilos, entre 30 e 300.', $('peso'));
+    if (!(altura >= 120 && altura <= 230)) return falha('Coloca a sua altura em centímetros. Exemplo: 178.', $('altura'));
+
+    var homem = marcado('sexo') === 'h';
+    var fator = parseFloat(marcado('ativ'));
+
+    var tmb = (10 * peso) + (6.25 * altura) - (5 * idade) + (homem ? 5 : -161);
+    var get = tmb * fator;
+
+    $('tmb').textContent = num(tmb);
+    $('get').textContent = num(get);
+    $('manter').innerHTML = num(get) + '<i>kcal</i>';
+    $('deficit').innerHTML = num(get * 0.85) + '<i>kcal</i>';
+    $('superavit').innerHTML = num(get * 1.10) + '<i>kcal</i>';
+
+    $('formula').textContent = homem
+      ? '10 × ' + peso + ' + 6,25 × ' + altura + ' − 5 × ' + idade + ' + 5 = ' + num(tmb) + ' kcal'
+      : '10 × ' + peso + ' + 6,25 × ' + altura + ' − 5 × ' + idade + ' − 161 = ' + num(tmb) + ' kcal';
+    $('fator').textContent = String(fator).replace('.', ',');
+
+    res.hidden = false;
+    try {
+      localStorage.setItem(CHAVE, JSON.stringify({
+        idade: idade, peso: peso, altura: altura,
+        sexo: marcado('sexo'), ativ: marcado('ativ')
+      }));
+    } catch (e) { /* modo privado */ }
+
+    if (res.scrollIntoView) res.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return true;
+  }
+
+  f.addEventListener('submit', function (ev) { ev.preventDefault(); calcular(); });
+  ['idade', 'peso', 'altura'].forEach(function (id) {
+    $(id).addEventListener('input', function () { erro.hidden = true; this.setAttribute('aria-invalid', 'false'); });
+  });
+
+  /* devolve o que a pessoa preencheu da última vez */
+  try {
+    var d = JSON.parse(localStorage.getItem(CHAVE) || 'null');
+    if (d) {
+      $('idade').value = d.idade; $('peso').value = d.peso; $('altura').value = d.altura;
+      var s = f.querySelector('input[name="sexo"][value="' + d.sexo + '"]');
+      var a = f.querySelector('input[name="ativ"][value="' + d.ativ + '"]');
+      if (s) s.checked = true;
+      if (a) a.checked = true;
+      calcular();
+    }
+  } catch (e) { /* ignora */ }
+})();
+</script>
+
+</body>
+</html>

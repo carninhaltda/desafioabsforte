@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>mockup cardapios</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1400px;height:875px;overflow:hidden;background:#07070a}
+.cena{
+  position:relative;width:1400px;height:875px;overflow:hidden;
+  background:radial-gradient(76% 86% at 50% 44%, #1e1e26 0%, #131318 46%, #0A0A0C 100%);
+}
+.cena::before{
+  content:"";position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:1000px;height:760px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,51,102,.22) 0%, rgba(255,51,102,0) 64%);
+}
+.cena::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(7,7,10,.35) 0%, rgba(7,7,10,0) 26%, rgba(7,7,10,0) 72%, rgba(7,7,10,.62) 100%);
+}
+.palco{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transform:scale(1.2);transform-origin:50% 46%}
+.pag{
+  position:relative;width:512px;height:724px;border-radius:9px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.17);
+  box-shadow:0 70px 120px -42px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.04) inset;
+}
+.pag img{width:100%;height:100%;object-fit:cover;display:block}
+.pag--tras{transform:translateX(152px) rotate(8deg) scale(.88);filter:brightness(.78)}
+.pag--frente{transform:translateX(-118px) rotate(-4deg);z-index:2}
+</style>
+</head>
+<body>
+<div class="cena">
+  <div class="palco">
+    <figure class="pag pag--tras"><img src="file:///private/tmp/claude-501/-Users-macbookprotria2-Branding-Pedro/d9d0a34f-f897-4fa7-bdca-c96ddefbcb02/scratchpad/mock/comer-3.png" alt=""></figure>
+    <figure class="pag pag--frente"><img src="file:///private/tmp/claude-501/-Users-macbookprotria2-Branding-Pedro/d9d0a34f-f897-4fa7-bdca-c96ddefbcb02/scratchpad/mock/comer-1.png" alt=""></figure>
+  </div>
+</div>
+</body>
+</html>

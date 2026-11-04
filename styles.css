@@ -171,6 +171,15 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
   .cover__lead{margin-top:14px;font-size:clamp(15px,1.9vw,17px);text-shadow:none}
 }
 
+/* Celular baixo (SE, 8, telas de 720px ou menos): encolhe a capa pra caber */
+@media (max-width:900px) and (max-height:720px){
+  .cover{min-height:100svh}
+  .cover__media{height:62%}
+  .cover__title{font-size:28px}
+  .cover__lead{margin-top:10px;font-size:14px}
+  .cover__in{padding-top:92px;padding-bottom:20px}
+}
+
 /* Telas largas: a foto ganha uma coluna a direita, assim o corpo inteiro cabe */
 @media (min-width:901px){
   .cover__media{inset:0 0 0 30%}
@@ -182,7 +191,7 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
     linear-gradient(0deg,#07070a 0%,rgba(7,7,10,.5) 16%,rgba(7,7,10,0) 38%),
     linear-gradient(180deg,rgba(7,7,10,.6) 0%,rgba(7,7,10,0) 20%),
     radial-gradient(60% 60% at 0% 100%,rgba(255,51,102,.22),transparent 70%)}
-  .cover__title{max-width:14ch}
+  .cover__title{font-size:clamp(40px,4.6vw,66px);max-width:15ch}
   .cover__lead{max-width:440px}
 }
 

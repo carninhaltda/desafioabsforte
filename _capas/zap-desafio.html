@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>zap desafio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1000px;height:1000px;overflow:hidden;background:#07070a}
+.ic{
+  position:relative;width:1000px;height:1000px;
+  background:radial-gradient(72% 60% at 50% 38%, #26262f 0%, #131318 46%, #0A0A0C 100%);
+  overflow:hidden;
+}
+.ic::before{
+  content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:880px;height:880px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,51,102,.18) 0%, rgba(255,51,102,0) 62%);
+}
+.simb{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:520px;height:520px}
+</style>
+</head>
+<body>
+<div class="ic">
+  <svg class="simb" viewBox="0 0 120 120" role="img" aria-label="Desafio Abdomen Forte">
+    <rect x="22" y="14" width="35" height="28" rx="6" fill="#FF3366"/>
+    <rect x="63" y="14" width="35" height="28" rx="6" fill="#FF3366"/>
+    <rect x="24" y="48" width="33" height="28" rx="6" fill="#FFFFFF"/>
+    <rect x="63" y="48" width="33" height="28" rx="6" fill="#FFFFFF"/>
+    <rect x="29" y="82" width="28" height="24" rx="6" fill="#FFFFFF"/>
+    <rect x="63" y="82" width="28" height="24" rx="6" fill="#FFFFFF"/>
+  </svg>
+</div>
+</body>
+</html>

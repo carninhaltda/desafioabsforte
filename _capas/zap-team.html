@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>zap team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..800&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1000px;height:1000px;overflow:hidden;background:#07070a}
+.ic{
+  position:relative;width:1000px;height:1000px;
+  background:radial-gradient(72% 60% at 50% 36%, #26262f 0%, #131318 46%, #0A0A0C 100%);
+  overflow:hidden;
+}
+.ic::before{
+  content:"";position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle, rgba(255,51,102,.20) 0%, rgba(255,51,102,0) 62%);
+}
+.lock{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-52%);text-align:center}
+.team{
+  display:block;font-family:'Permanent Marker',cursive;font-size:102px;line-height:1;
+  color:#fff;transform:rotate(-5deg);margin-bottom:-10px;
+  text-shadow:0 8px 34px rgba(0,0,0,.6);
+}
+.nome{
+  display:block;font-family:Archivo,sans-serif;font-weight:800;font-stretch:125%;
+  font-size:112px;line-height:.88;letter-spacing:-.005em;text-transform:uppercase;color:#FF3366;
+}
+</style>
+</head>
+<body>
+<div class="ic">
+  <div class="lock">
+    <span class="team">Team</span>
+    <span class="nome">Carninha</span>
+  </div>
+</div>
+</body>
+</html>
